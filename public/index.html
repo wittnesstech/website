@@ -4,257 +4,170 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./alpine.js"></script>
-    <link rel="stylesheet" href="./tailwind.min.css" />
+    <script src="./js/alpine.js"></script>
+    <link rel="stylesheet" href="./css/tailwind.min.css" />
     <title>Wittness Tech</title>
   </head>
-  <body class="flex flex-col justify-center">
+  <body
+    class="
+      flex flex-col
+      justify-center
+      bg-white
+      dark:bg-gray-600
+      text-gray-900
+      dark:text-gray-50
+      text-lg
+    "
+    x-data="{ showBar: false }"
+  >
     <nav
+      :class="{ 'bg-transparent rounded-b-full bg-opacity-80 hover:bg-opacity-100 border-b-8 border-green-600 shadow transition duration-1000  shadow-xl' : showBar }"
+      @scroll.window="showBar = (window.pageYOffset > 20) ? true : false"
       class="
-        p-2
-        flex
-        row
-        sticky
+        w-full
+        py-2
+        text-center
+        fixed
         top-0
+        bg-gray-200
+        transition-all
+        duration-1000
+        flex
         items-center
-        bg-purple-500
-        shadow-lg
         justify-center
+        text-gray-800 text-xs
+        font-bold
+        text-xl
+        uppercase
+        shadow-md
+        hover:shadow-lg hover:text-gray-900
       "
     >
-      <div>
+      <div class="flex flex-row w-1/6 pl-8">
         <svg
-          width="128"
-          height="128"
-          viewBox="0 0 33.866666 33.866668"
+          width="64"
+          height="64"
+          viewBox="0 0 16.933333 16.933334"
           version="1.1"
-          id="svg5"
-          inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-          sodipodi:docname="W.svg"
+          id="svg1114"
+          inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+          sodipodi:docname="wittness1.svg"
           xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
           xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:svg="http://www.w3.org/2000/svg"
         >
-          <sodipodi:namedview
-            id="namedview7"
-            pagecolor="#ffffff"
-            bordercolor="#666666"
-            borderopacity="1.0"
-            inkscape:pageshadow="2"
-            inkscape:pageopacity="0.0"
-            inkscape:pagecheckerboard="0"
-            inkscape:document-units="mm"
-            showgrid="false"
-            inkscape:zoom="3.6760468"
-            inkscape:cx="80.385267"
-            inkscape:cy="64.335416"
-            inkscape:window-width="1360"
-            inkscape:window-height="744"
-            inkscape:window-x="0"
-            inkscape:window-y="18"
-            inkscape:window-maximized="1"
-            inkscape:current-layer="layer3"
-            inkscape:snap-bbox="true"
-            inkscape:snap-page="true"
-            inkscape:snap-midpoints="true"
-            inkscape:snap-smooth-nodes="true"
-            inkscape:snap-intersection-paths="true"
-            inkscape:object-paths="true"
-            inkscape:snap-bbox-midpoints="true"
-            inkscape:snap-bbox-edge-midpoints="true"
-            inkscape:bbox-nodes="false"
-            inkscape:bbox-paths="false"
-            inkscape:snap-global="false"
-            inkscape:snap-object-midpoints="true"
-            inkscape:snap-center="true"
-            inkscape:snap-text-baseline="true"
-            units="px"
-            showguides="true"
-            inkscape:guide-bbox="true"
-          />
-          <defs id="defs2">
-            <linearGradient inkscape:collect="always" id="linearGradient22829">
-              <stop
-                style="stop-color: #ffff00; stop-opacity: 1"
-                offset="0"
-                id="stop22825"
+          <defs id="defs1111" />
+          <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+            <g
+              id="g7455"
+              transform="matrix(0.38886891,0,0,0.33252078,2.5922963,6.6588457)"
+            >
+              <path
+                id="path3373"
+                style="
+                  font-variation-settings: normal;
+                  fill: #ff0000;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.944175;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 12.6;
+                  stroke-dasharray: none;
+                  stroke-dashoffset: 0;
+                  stroke-opacity: 0.996059;
+                  paint-order: normal;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="-4.3811044e-06"
+                inkscape:transform-center-y="-7.5409504"
+                d="m 15.10656,-17.037008 c -2.38895,13.363909 -4.77798,26.727804 -7.16752,40.091609 1.22654,-4.287488 3.81653,-8.246541 7.1856,-11.078392 3.35487,2.900669 5.92499,6.783162 7.14892,11.074259 -2.38888,-13.362514 -4.77793,-26.724997 -7.167,-40.087476 z"
+                sodipodi:nodetypes="ccccc"
               />
-              <stop
-                style="stop-color: #000000; stop-opacity: 0"
-                offset="1"
-                id="stop22827"
+              <path
+                id="path2954"
+                style="
+                  fill: #ffffff44;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.944175;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 11;
+                  stroke-dasharray: none;
+                  stroke-opacity: 0.996059;
+                  paint-order: fill markers stroke;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="1.270063e-05"
+                inkscape:transform-center-y="19.399231"
+                d="m 28.76599,11.98086 c -0.26192,-0.768957 -0.55795,-1.519733 -0.88677,-2.248958 -0.88326,4.11362 -1.76643,8.227171 -2.64945,12.340846 -0.40928,2.200228 -1.70075,6.780581 -1.70075,6.780581 0,0 -1.2913,-4.58006 -1.70062,-6.780616 C 20.94537,17.95904 20.0622,13.845481 19.17894,9.731867 l -0.85782,2.172475 C 18.10713,9.779439 17.6569,7.680438 16.97081,5.665964 16.84233,5.155353 16.59031,4.674235 16.39203,4.183366 l 0.91106,-4.242117 c 8.33957,-2.347036 14.49004,-9.893025 16.23006,-11.923092 z"
+                sodipodi:nodetypes="cccccccccccc"
               />
-            </linearGradient>
-            <linearGradient inkscape:collect="always" id="linearGradient20379">
-              <stop
-                style="stop-color: #ff0000; stop-opacity: 1"
-                offset="0"
-                id="stop20375"
+              <path
+                id="path7338"
+                style="
+                  fill: #ffffff44;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.944175;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 11;
+                  stroke-dasharray: none;
+                  stroke-opacity: 0.996059;
+                  paint-order: fill markers stroke;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="-1.0612715e-05"
+                inkscape:transform-center-y="19.399231"
+                d="m 1.44661,11.98086 c 0.26192,-0.768957 0.55795,-1.519733 0.88677,-2.248958 0.88326,4.11362 1.76643,8.227171 2.64945,12.340846 0.40928,2.200228 1.70075,6.780581 1.70075,6.780581 0,0 1.2913,-4.58006 1.70062,-6.780616 0.88303,-4.113673 1.7662,-8.227232 2.64946,-12.340846 l 0.85782,2.172475 C 12.10547,9.779439 12.5557,7.680438 13.24179,5.665964 13.37027,5.155353 13.62229,4.674235 13.82057,4.183366 L 12.90951,-0.058751 C 4.56994,-2.405787 -1.58053,-9.951776 -3.32055,-11.981843 Z"
+                sodipodi:nodetypes="cccccccccccc"
               />
-              <stop
-                style="stop-color: #000000; stop-opacity: 1"
-                offset="1"
-                id="stop20377"
-              />
-            </linearGradient>
-            <rect
-              x="77.525803"
-              y="976.79694"
-              width="634.89789"
-              height="234.63782"
-              id="rect4885"
-            />
-            <linearGradient
-              inkscape:collect="always"
-              xlink:href="#linearGradient20379"
-              id="linearGradient21487"
-              x1="65.765007"
-              y1="-42.248062"
-              x2="65.765007"
-              y2="-79.651505"
-              gradientUnits="userSpaceOnUse"
-              gradientTransform="matrix(0.51532866,0,0,0.51532866,-23.776097,48.105957)"
-            />
-            <linearGradient
-              inkscape:collect="always"
-              xlink:href="#linearGradient20379"
-              id="linearGradient21489"
-              x1="94.680145"
-              y1="-43.495544"
-              x2="94.680145"
-              y2="-77.575417"
-              gradientUnits="userSpaceOnUse"
-              gradientTransform="matrix(0.51532866,0,0,0.51532866,-23.776097,48.105957)"
-            />
-            <linearGradient
-              inkscape:collect="always"
-              xlink:href="#linearGradient22829"
-              id="linearGradient22439"
-              x1="78.4291"
-              y1="-48.754704"
-              x2="78.4291"
-              y2="-88.447037"
-              gradientUnits="userSpaceOnUse"
-              gradientTransform="matrix(0.51532866,0,0,0.51532866,-23.776097,48.105957)"
-            />
-          </defs>
-          <g inkscape:groupmode="layer" id="layer3" inkscape:label="W 1">
-            <path
-              id="rect11152"
-              style="
-                fill: none;
-                fill-rule: evenodd;
-                stroke: #000000;
-                stroke-width: 3.44059;
-                stroke-opacity: 1;
-                paint-order: markers stroke fill;
-                stop-color: #000000;
-              "
-              d="M 11.955078 2.5839844 C 6.7642291 2.5839844 2.5839844 6.7642291 2.5839844 11.955078 L 2.5839844 116.04492 C 2.5839844 121.23577 6.7642291 125.41602 11.955078 125.41602 L 116.04492 125.41602 C 121.23577 125.41602 125.41602 121.23577 125.41602 116.04492 L 125.41602 11.955078 C 125.41602 6.7642291 121.23577 2.5839844 116.04492 2.5839844 L 11.955078 2.5839844 z M 12.517578 3.25 L 115.48242 3.25 C 120.61704 3.25 124.75 7.3829591 124.75 12.517578 L 124.75 115.48242 C 124.75 120.61704 120.61704 124.75 115.48242 124.75 L 12.517578 124.75 C 7.3829591 124.75 3.25 120.61704 3.25 115.48242 L 3.25 12.517578 C 3.25 7.3829591 7.3829591 3.25 12.517578 3.25 z "
-              transform="scale(0.26458333)"
-            />
-            <rect
-              style="
-                fill: #000000;
-                fill-rule: evenodd;
-                stroke: #ffff00;
-                stroke-width: 0.024944;
-                stroke-opacity: 0.483364;
-                paint-order: fill markers stroke;
-                stop-color: #000000;
-              "
-              id="rect4867"
-              width="30.894775"
-              height="30.894775"
-              x="1.4859618"
-              y="1.4859467"
-              ry="2.3567178"
-            />
-            <path
-              id="path7089"
-              style="
-                fill: url(#linearGradient22439);
-                fill-opacity: 1;
-                fill-rule: evenodd;
-                stroke: none;
-                stroke-width: 0.0231155;
-                stroke-opacity: 0.483364;
-                paint-order: fill markers stroke;
-                stop-color: #000000;
-              "
-              inkscape:transform-center-x="-1.7849309e-06"
-              inkscape:transform-center-y="14.628542"
-              d="M 12.494994,2.8975233 16.932938,23.571993 21.371686,2.8975233 H 20.6018 a 4.9090655,4.9090655 0 0 1 -3.668603,1.651348 4.9090655,4.9090655 0 0 1 -3.668331,-1.651348 z m 1.14191,1.4116754 c 1.905986,1.3981742 4.681814,1.3787036 6.594467,0.00428 C 19.131935,9.4332136 18.032634,14.55279 16.933197,19.672528 15.834442,14.55145 14.735659,9.4302927 13.636904,4.3092152 Z"
-            />
-            <path
-              id="path7091"
-              style="
-                fill: url(#linearGradient21489);
-                fill-opacity: 1;
-                fill-rule: evenodd;
-                stroke: none;
-                stroke-width: 0.030654;
-                stroke-opacity: 0.483364;
-                paint-order: fill markers stroke;
-                stop-color: #000000;
-              "
-              inkscape:transform-center-x="-4.2727594e-06"
-              inkscape:transform-center-y="19.399273"
-              d="M 22.077924,5.5997048 19.856676,15.943729 c 0.445297,1.138297 0.793528,2.313559 0.936856,3.531984 0.02056,0.154334 0.03789,0.309267 0.05353,0.464433 a 9.5858964,11.765031 0 0 1 0.442065,-1.119806 c 0.455169,2.119864 0.910297,4.2397 1.365342,6.359593 0.21093,1.13401 0.514016,2.244956 0.868683,3.341842 v -0.0013 c 0.0026,0.0085 0.0052,0.01704 0.0077,0.02557 0.0026,-0.0085 0.0052,-0.01704 0.0077,-0.02557 v 8.24e-4 c 0.354586,-1.096727 0.657754,-2.207469 0.86867,-3.341309 0.455045,-2.119895 0.910173,-4.239727 1.365341,-6.359594 a 9.5858964,11.765031 0 0 1 0.456982,1.158953 L 29.273969,5.7981012 A 4.9090655,4.9090655 0 0 1 25.796308,7.2473234 4.9090655,4.9090655 0 0 1 22.130909,5.5997048 Z m 0.512898,1.4894353 c 1.584561,1.0521873 3.698272,1.2687763 5.454155,0.5083728 -0.686769,3.2073851 -1.373619,6.4146911 -2.060387,9.6220781 -0.155831,-0.369269 -0.312562,-0.737994 -0.468953,-1.107024 -0.660712,3.078935 -1.321943,6.157851 -1.9829,9.236736 -0.674483,-3.076552 -1.325405,-6.158409 -1.986895,-9.237802 -0.141256,0.333487 -0.282402,0.66703 -0.423686,1.000502 -0.120804,-0.415161 -0.263791,-0.823496 -0.413569,-1.228991 0.625589,-2.931596 1.264241,-5.86091 1.882235,-8.7938719 z"
-            />
-            <path
-              id="path7095"
-              style="
-                fill: url(#linearGradient21487);
-                fill-opacity: 1;
-                fill-rule: evenodd;
-                stroke: none;
-                stroke-width: 0.030654;
-                stroke-opacity: 0.483364;
-                paint-order: fill markers stroke;
-                stop-color: #000000;
-              "
-              inkscape:transform-center-x="5.942008e-06"
-              inkscape:transform-center-y="19.399273"
-              d="M 11.735758,5.5997048 A 4.9090655,4.9090655 0 0 1 8.0703587,7.2473234 4.9090655,4.9090655 0 0 1 4.5926963,5.7981012 L 7.6370874,19.979292 A 9.5858964,11.765031 0 0 1 8.0940556,18.82034 c 0.4551687,2.119866 0.9102961,4.239698 1.3653422,6.359593 0.2109157,1.133841 0.5140702,2.244582 0.8686822,3.34131 0.0025,0.0084 0.0052,0.01667 0.0077,0.02503 0.0026,-0.0085 0.0052,-0.01704 0.0077,-0.02556 v 0.0013 c 0.354666,-1.096887 0.657725,-2.207834 0.868682,-3.341843 0.455046,-2.119894 0.91016,-4.23973 1.365328,-6.359594 a 9.5858964,11.765031 0 0 1 0.442066,1.119541 c 0.110277,-1.095025 0.342286,-2.176699 0.695848,-3.214815 0.06621,-0.263133 0.196082,-0.511067 0.29826,-0.764026 L 11.788757,5.5999753 Z M 11.270527,7.08115 c 0.623108,2.9037384 1.246338,5.807585 1.869445,8.71132 -0.07862,0.438543 -0.285443,0.86658 -0.397848,1.306485 -0.139429,-0.330391 -0.278598,-0.660984 -0.417836,-0.991448 -0.666548,3.078239 -1.320484,6.159271 -1.984755,9.237801 C 9.6588191,22.271476 9.0190092,19.188503 8.3475803,16.112567 8.1919397,16.480961 8.0368443,16.849525 7.8807539,17.217725 7.1984716,14.013656 6.4936788,10.81252 5.8254129,7.6065677 7.5377042,8.3368343 9.6668227,8.1624734 11.23644,7.1053843 Z"
-            />
-            <path
-              id="path11150"
-              style="
-                fill: #ffffff;
-                fill-rule: evenodd;
-                stroke: #ffff00;
-                stroke-width: 0.0360388;
-                stroke-opacity: 0.483364;
-                paint-order: fill markers stroke;
-                stop-color: #000000;
-              "
-              d="m 14.691662,16.217148 a 9.5858964,11.765031 0 0 0 -1.206621,5.678388 9.5858964,11.765031 0 0 0 3.440648,9.020764 v 0.01651 a 9.5858964,11.765031 0 0 0 0.0075,-0.0085 9.5858964,11.765031 0 0 0 0.008,0.0085 V 30.9155 a 9.5858964,11.765031 0 0 0 3.440643,-9.019965 9.5858964,11.765031 0 0 0 -1.206621,-5.678388 c -0.455169,2.119866 -0.910297,4.239697 -1.365343,6.359592 -0.210914,1.13384 -0.514081,2.244582 -0.868679,3.34131 v -8.25e-4 c -0.0026,0.0085 -0.0052,0.01704 -0.0077,0.02557 -0.0026,-0.0085 -0.0052,-0.01704 -0.0077,-0.02557 v 0.0013 c -0.35467,-1.096886 -0.65774,-2.207834 -0.868684,-3.341843 -0.455046,-2.119894 -0.910174,-4.239727 -1.365343,-6.359592 z"
-            />
+            </g>
           </g>
         </svg>
       </div>
-      <ul class="flex row pl-6 text-xl">
-        <li class="p-2">SERVICES</li>
-        <li class="p-2">APPROACH</li>
-        <li class="p-2">INDUSTRIES</li>
-        <li class="p-2">CASE STUDIES</li>
-        <li class="p-2">BLOG</li>
-        <li class="p-2">ABOUT US</li>
-        <li class="p-2">CAREERS</li>
-      </ul>
+      <div class="flex flex-row w-4\/6">
+        <ul class="flex row pl-6">
+          <li class="pr-6 hover:text-green-600">
+            <a href="#sec2"> Services </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#sec1"> Process </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#sec1"> Industries </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#sec1"> Case Studies </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#sec1"> About Us </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#contact"> Contact Us </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-row w-1/6"></div>
     </nav>
-    <div class="bg-red-200 p-20 shadow-inner">
-      <h1 class="text-6xl text-green-900 text-center">Wittness Tech</h1>
-      <h2 class="py-8 text-4xl">Software Consultancy</h2>
+    <div
+      class="p-20 pt-40 shadow-inner h-screen text-gray-100"
+      style="background-image: url(./img/bg1.png); background-attachment: fixed"
+    >
+      <h1 class="pt-12 text-9xl font-extrabold text-green-500 text-center">
+        Wittness Tech
+      </h1>
+      <h2 class="mt-40 py-8 text-4xl">Software Consultancy</h2>
       <p class="text-2xl">
         If you need help identifying the technology barriers that stand between
         you and a more profitable business, our software consultants can help.
       </p>
     </div>
-    <div class="bg-green-200 p-20">
+    <div id="sec2" class="bg-green-200 p-20">
       <h2 class="text-3xl">How our Software Consultants can help you</h2>
       <p class="py-4">
         We can consult with your business for as little or as long as you need
@@ -459,6 +372,31 @@
           <button class="bg-red-400 rounded-xl p-4 mb-4">LEARN MORE</button>
         </div>
       </div>
+    </div>
+    <div id="contact">
+      <form name="contact" method="POST" data-netlify="true">
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <label
+            >Your Role:
+            <select name="role[]" multiple>
+              <option value="leader">Leader</option>
+              <option value="follower">Follower</option>
+            </select></label
+          >
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
     </div>
     <footer>
       <div
