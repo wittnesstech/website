@@ -10,6 +10,7 @@
   </head>
   <body
     class="
+      w-screen
       flex flex-col
       justify-center
       bg-white
@@ -20,11 +21,215 @@
     "
     x-data="{ showBar: false }"
   >
+    <div
+      class="bg-blue-500 visible lg:invisible w-screen"
+      x-data="{showMenu : false}"
+    >
+      <button
+        @click.prevent="showMenu = !showMenu "
+        class="px-2 py-4 flex justify-between bg-blue-500 text-white"
+      >
+        <svg
+          x-show="!showMenu"
+          class="w-6 h-6 mr-2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          x-show="showMenu"
+          class="w-6 h-6 mr-2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+        Menu
+      </button>
+      <div x-show="showMenu">
+        <button
+          @click.prevent="showMenu = !showMenu "
+          class="
+            px-2
+            py-4
+            font-bold
+            flex
+            justify-between
+            text-blue-900
+            w-full
+            border-b border-blue-900
+            bg-white
+          "
+        >
+          Menu
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <nav class="flex flex-col">
+          <a
+            href="#"
+            class="
+              px-2
+              py-4
+              text-blue-600
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-blue-100 hover:bg-blue-600
+            "
+          >
+            Home
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="
+              px-2
+              py-4
+              text-blue-600
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-blue-100 hover:bg-blue-600
+            "
+          >
+            About
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="
+              px-2
+              py-4
+              text-blue-600
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-blue-100 hover:bg-blue-600
+            "
+          >
+            Services
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="
+              px-2
+              py-4
+              text-blue-600
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-blue-100 hover:bg-blue-600
+            "
+          >
+            Portfolio
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="
+              px-2
+              py-4
+              text-blue-600
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-blue-100 hover:bg-blue-600
+            "
+          >
+            Contact us
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </div>
+    <!-- .bg-blue-500 -->
     <nav
       :class="{ 'bg-transparent rounded-b-full bg-opacity-80 hover:bg-opacity-100 border-b-8 border-green-600 shadow transition duration-1000  shadow-xl' : showBar }"
       @scroll.window="showBar = (window.pageYOffset > 20) ? true : false"
       class="
-        w-full
+        invisible
+        lg:visible
+        w-screen
         py-2
         text-center
         fixed
@@ -133,19 +338,19 @@
       <div class="flex flex-row w-4\/6">
         <ul class="flex row pl-6">
           <li class="pr-6 hover:text-green-600">
-            <a href="#sec2"> Services </a>
+            <a href="#aboutUs"> About Us </a>
           </li>
           <li class="pr-6 hover:text-green-600">
-            <a href="#sec1"> Process </a>
+            <a href="#services"> Services </a>
           </li>
           <li class="pr-6 hover:text-green-600">
-            <a href="#sec1"> Industries </a>
+            <a href="#process"> Process </a>
           </li>
+          <!-- <li class="pr-6 hover:text-green-600">
+            <a href="#industries"> Industries </a>
+          </li> -->
           <li class="pr-6 hover:text-green-600">
-            <a href="#sec1"> Case Studies </a>
-          </li>
-          <li class="pr-6 hover:text-green-600">
-            <a href="#sec1"> About Us </a>
+            <a href="#caseStudies"> Case Studies </a>
           </li>
           <li class="pr-6 hover:text-green-600">
             <a href="#contact"> Contact Us </a>
@@ -155,52 +360,218 @@
       <div class="flex flex-row w-1/6"></div>
     </nav>
     <div
-      class="p-20 pt-40 shadow-inner h-screen text-gray-100"
+      class="
+        p-20
+        pt-40
+        shadow-inner
+        h-screen
+        text-gray-100 text-center
+        flex flex-col
+        justify-between
+      "
       style="background-image: url(./img/bg1.png); background-attachment: fixed"
     >
       <h1 class="pt-12 text-9xl font-extrabold text-green-500 text-center">
         Wittness Tech
       </h1>
-      <h2 class="mt-40 py-8 text-4xl">Software Consultancy</h2>
-      <p class="text-2xl">
-        If you need help identifying the technology barriers that stand between
-        you and a more profitable business, our software consultants can help.
+      <!-- <h2 class="pt-8 text-4xl">Software Consultancy</h2> -->
+      <p class="pb-8 text-2xl">
+        We’re witnessing the fastest technology transformation in modern
+        history,<br />businesses today can either catch up or die!
+        <br />Everything is being automated, which is both a tremendous threat
+        and opportunity for companies.
+        <br />
+        In short . . . Software is eating the world.
+        <br />
+        If you need help with the technology gap that stand between you and an
+        efficient business workflow,<br />our software consultants can help.
       </p>
     </div>
-    <div id="sec2" class="bg-green-200 p-20">
+    <div id="aboutUs">
+      <!-- ONE PAGE -->
+      <div class="h-screen pt-36 bg-yellow-200 p-20 flex flex-row">
+        <div
+          class="
+            flex flex-col
+            rounded-2xl
+            w-full
+            hover:shadow-xl hover:border-opacity-60
+            border-green-600 border-4 border-opacity-0
+            transition-all
+          "
+        >
+          <div class="text-center text-3xl p-2">Our Story</div>
+          <div class="flex row">
+            <div class="flex w-full p-4">
+              <img
+                src="img/bg1.png"
+                alt=""
+                class="rounded-2xl hover:shadow-xl transition-all"
+              />
+            </div>
+            <div class="flex w-full p-4 items-center text-justify">
+              Wittness was born when two brothers of a suburban town of Pakistan
+              recognised their interest in computers. Having seen the dot-com
+              times was a fascinating and life altering experience for them.
+              Their thirst for knowledge led them to become tech engineers,
+              while their curiosity made them problem solvers. <br />
+              Once they learnt how fulfilling extending help can be, they set
+              out to use their skills, knowledge and experience to help
+              surrounding individuals and organisations. <br />
+              Today Wittness is proudly helping organisations in forming the
+              technical stack tailored for their unique business needs.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ONE PAGE -->
+      <div class="h-screen pt-36 bg-yellow-200 p-20 flex flex-row">
+        <div
+          class="
+            flex flex-col
+            rounded-2xl
+            w-full
+            hover:shadow-xl hover:border-opacity-60
+            border-green-600 border-4 border-opacity-0
+            transition-all
+          "
+        >
+          <div class="text-center text-3xl p-2">Our Mission</div>
+          <div class="flex row">
+            <div class="flex w-full p-4 items-center">
+              <div>
+                <span class="text-2xl font-bold">Technology</span> deployed with
+                <span class="text-2xl font-bold">compassion</span> is
+                invigorating for every outfit. It pleases us at Wittness when
+                our elaborately created solutions fill the unknown void for any
+                business, and make our clients go
+                <span class="text-2xl font-bold">"Wow"</span>.
+              </div>
+            </div>
+            <div class="flex w-full p-4">
+              <img
+                src="img/bg1.png"
+                alt=""
+                class="rounded-2xl hover:shadow-xl transition-all"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ONE PAGE -->
+      <div class="h-screen pt-36 bg-yellow-200 p-20 flex flex-row">
+        <div
+          class="
+            flex flex-col
+            rounded-2xl
+            w-full
+            h-auto
+            hover:shadow-xl hover:border-opacity-60
+            border-green-600 border-4 border-opacity-0
+            transition-all
+          "
+        >
+          <div class="text-center text-3xl p-2">Our Team</div>
+          <div class="flex row justify-around">
+            <div class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg">
+              <img
+                src="img/default-photo.png"
+                alt=""
+                class="
+                  w-48
+                  self-center
+                  rounded-full
+                  border-4 border-white
+                  hover:border-green-500 hover:shadow-xl
+                  transition-all
+                "
+              />
+              <div class="text-center bg-green-300 rounded-md m-4">
+                John Doe
+              </div>
+            </div>
+            <div class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg">
+              <img
+                src="img/default-photo.png"
+                alt=""
+                class="
+                  w-48
+                  self-center
+                  rounded-full
+                  border-4 border-white
+                  hover:border-green-500 hover:shadow-xl
+                  transition-all
+                "
+              />
+              <div class="text-center bg-green-300 rounded-md m-4">
+                John Doe
+              </div>
+            </div>
+            <div class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg">
+              <img
+                src="img/default-photo.png"
+                alt=""
+                class="
+                  w-48
+                  self-center
+                  rounded-full
+                  border-4 border-white
+                  hover:border-green-500 hover:shadow-xl
+                  transition-all
+                "
+              />
+              <div class="text-center bg-green-300 rounded-md m-4">
+                John Doe
+              </div>
+            </div>
+            <div class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg">
+              <img
+                src="img/default-photo.png"
+                alt=""
+                class="
+                  w-48
+                  self-center
+                  rounded-full
+                  border-4 border-white
+                  hover:border-green-500 hover:shadow-xl
+                  transition-all
+                "
+              />
+              <div class="text-center bg-green-300 rounded-md m-4">
+                John Doe
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="services" class="h-screen pt-40 bg-gray-200 p-20 shadow-inner">
       <h2 class="text-3xl">How our Software Consultants can help you</h2>
       <p class="py-4">
-        We can consult with your business for as little or as long as you need
-        and give as much or as little end-to-end support as required, including:
+        Over the years, we at Wittness have developed a keen eye in identifying
+        software needs that can increase the efficieny of businesses. We have
+        worked on numerous tech stacks in various business domains, resulting in
+        customer satisafaction. Our team can consult with your business for as
+        little or as long as you need and give support as required. Our key
+        services include Design & Deployment on the following :
       </p>
       <ul class="flex flex-col">
+        <li class="py-2"><span class="px-2">O</span> Web infrastructure</li>
         <li class="py-2">
-          <span class="px-2">O</span> Consulting with you for a period of time
-          to understand your business,
+          <span class="px-2">O</span> Distributed Web based infrastructure
+        </li>
+        <li class="py-2"><span class="px-2">O</span> On site solutions</li>
+        <li class="py-2"><span class="px-2">O</span> Cloud services</li>
+        <li class="py-2">
+          <span class="px-2">O</span> Windows/ Android/ Mac/ iOS and Linux based
+          stand-alone business Applications
         </li>
         <li class="py-2">
-          <span class="px-2">O</span> Reviewing your current technology and
-          providing an independent
-        </li>
-        <li class="py-2">
-          <span class="px-2">O</span> Recommendation for improvement
-          complementing the work your IT department
-        </li>
-        <li class="py-2">
-          <span class="px-2">O</span> Already does by adding expert resource to
-          enable faster project delivery
-        </li>
-        <li class="py-2">
-          <span class="px-2">O</span> Working with you from start to finish to
-          analyse your requirements,
-        </li>
-        <li class="py-2">
-          <span class="px-2">O</span> Carry out assessments and create the
-          resulting bespoke software solution
+          <span class="px-2">O</span> Setting up network infrastructure
         </li>
       </ul>
     </div>
-    <div class="bg-gray-200 p-20 shadow-inner">
+    <div id="process" class="h-screen pt-40 flex flex-col bg-green-300 p-20">
       <h2 class="text-3xl">Understanding your business</h2>
       <p class="py-4">
         Before we even think about making any recommendations, we spend time
@@ -209,82 +580,103 @@
         business operations to determine where any efficiencies could be made
         and what, currently, stands in the way of achieving this.
       </p>
-      <p class="py-4">
+      <p class="pt-4">
         By having this bigger picture, we ensure that our recommendations
         accurately and effectively meet your business needs and the requirements
         of your particular organisation.
       </p>
+      <div class="flex flex-row">
+        <div
+          class="
+            w-1/3
+            py-4
+            w-48
+            self-center
+            rounded-xl
+            p-8
+            m-8
+            hover:border-green-500 hover:shadow-xl
+            transition-all
+          "
+        >
+          <h3 class="text-xl p-4 text-center">Business analysis</h3>
+          <ul>
+            <li><span class="px-4">O</span>Requirements analysis</li>
+            <li><span class="px-4">O</span>Collaborative prototyping</li>
+            <li><span class="px-4">O</span>Application structure</li>
+            <li><span class="px-4">O</span>Technical specification</li>
+          </ul>
+        </div>
+        <div
+          class="
+            w-1/3
+            py-4
+            w-48
+            self-center
+            rounded-xl
+            p-8
+            m-8
+            hover:border-green-500 hover:shadow-xl
+            transition-all
+          "
+        >
+          <h3 class="text-xl p-4 text-center">Systems analysis</h3>
+          <ul>
+            <li><span class="px-4">O</span>Technical solution</li>
+            <li><span class="px-4">O</span>Support plan</li>
+            <li><span class="px-4">O</span>Stakeholders</li>
+          </ul>
+        </div>
+        <div
+          class="
+            w-1/3
+            py-4
+            w-48
+            self-center
+            rounded-xl
+            p-8
+            m-8
+            hover:border-green-500 hover:shadow-xl
+            transition-all
+          "
+        >
+          <h3 class="text-xl p-4 text-center">Operational analysis</h3>
+          <ul>
+            <li><span class="px-4">O</span>Development methodology</li>
+            <li><span class="px-4">O</span>Coding standards</li>
+            <li><span class="px-4">O</span>System management</li>
+            <li><span class="px-4">O</span>Quality assurance</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="flex row bg-green-300 p-20">
-      <div class="bg-red-300 w-1/3 py-4">
-        <h3 class="text-xl p-4">Business analysis</h3>
-        <ul>
-          <li><span class="px-4">O</span>Requirements analysis</li>
-          <li><span class="px-4">O</span>Collaborative prototyping</li>
-          <li><span class="px-4">O</span>Application structure</li>
-          <li><span class="px-4">O</span>Technical specification</li>
-          <li><span class="px-4">O</span>Quality assurance</li>
-        </ul>
-      </div>
-      <div class="bg-yellow-300 w-1/3 py-4">
-        <h3 class="text-xl p-4">Systems analysis</h3>
-        <ul>
-          <li><span class="px-4">O</span>Business and system comes together</li>
-          <li><span class="px-4">O</span>Technical solution</li>
-          <li><span class="px-4">O</span>Support plan</li>
-          <li><span class="px-4">O</span>Stakeholders</li>
-        </ul>
-      </div>
-      <div class="bg-red-300 w-1/3 py-4">
-        <h3 class="text-xl p-4">Operational analysis</h3>
-        <ul>
-          <li><span class="px-4">O</span>Development methodology</li>
-          <li><span class="px-4">O</span>Coding standards</li>
-          <li><span class="px-4">O</span>System management</li>
-        </ul>
-      </div>
-    </div>
-    <div class="bg-gray-200 p-20 shadow-inner">
-      <h2 class="text-3xl">About our Software Development Consultants</h2>
+    <div id="" class="h-screen pt-40 bg-gray-200 p-20 shadow-inner">
+      <h2 class="text-3xl">About our System Consultants</h2>
       <p class="py-4">
         Our Consultants are highly experienced Technical Architects and Software
         Developers, meaning they recognise not only what is required from a
         business perspective, but also what is achievable from a technical
-        viewpoint. Based out of our UK and mainland European delivery centres,
-        they have many years of hands-on experience of guiding companies through
-        technology change.
+        standpoint. They have many years of hands-on experience of guiding
+        companies through technology change.
       </p>
       <p class="py-4">
-        As well as advising on the best technology solution for your business,
-        our Consultants are also very happy to offer help and guidance on how to
-        overcome the huge challenges posed by the development of large-scale
-        complex software systems, such as:
+        Advising on the best technology solution for your business, our
+        Consultants are here to offer help and guidance on how to overcome the
+        huge challenges posed by the development of large-scale complex software
+        systems, such as:
       </p>
       <ul>
         <li><span class="px-4">O</span>Avoiding late software</li>
+        <li><span class="px-4">O</span>Delivery going over budget</li>
         <li>
-          <span class="px-4">O</span>Delivery going over budget, and the
-          knock-on effects of reduced
-        </li>
-        <li>
-          <span class="px-4">O</span>
-          Functionality resolving complexities/sensitivities with the alignment
-          of company goals
+          <span class="px-4">O</span>Functionality resolving
+          complexities/sensitivities with the alignment of company goals
         </li>
         <li><span class="px-4">O</span>Integrating new and existing systems</li>
       </ul>
     </div>
-    <div class="rounded-3xl bg-gray-400 p-20 m-4 text-center">
-      <h2 class="text-3xl">
-        Are you looking for a bespoke software solution for your business?
-      </h2>
-      <p class="py-4 text-lg">
-        Our experts can create bespoke applications, platforms and products to
-        meet the requirements of your business
-      </p>
-      <button class="bg-purple-600 rounded-xl p-4">LEARN MORE</button>
-    </div>
-    <div class="bg-green-300 p-20">
+
+    <div id="caseStudies" class="h-screen bg-green-300 p-20">
       <h3 class="text-3xl py-4 text-center">Examples of Work</h3>
       <div class="flex row p-2 bg-yellow-400">
         <div class="rounded-xl bg-gray-200 px-4 m-4 text-center">
@@ -298,7 +690,7 @@
               align-middle
             "
           >
-            <div class="relative -top-12 text-xl">WORK A</div>
+            <div class="relative -top-12 text-xl">Trackers</div>
           </div>
           <div class="p-4 text-lg text-justify">
             Work desc Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -373,57 +765,191 @@
         </div>
       </div>
     </div>
-    <div id="contact">
-      <form name="contact" method="POST" data-netlify="true">
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <label
-            >Your Role:
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select></label
-          >
-        </p>
-        <p>
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
+    <div
+      id="contact"
+      class="h-max pt-40 rounded-3xl bg-gray-400 p-20 m-4 text-center"
+    >
+      <div
+        class="
+          flex flex-col
+          rounded-2xl
+          w-full
+          hover:shadow-xl hover:border-opacity-60
+          border-green-600 border-4 border-opacity-0
+          transition-all
+        "
+      >
+        <div class="text-center text-3xl p-2">
+          Are you looking for a bespoke software solution for your business?
+          <div class="text-center text-xl p-2">
+            Our experts can create applications, platforms and products to meet
+            the requirements of your business
+          </div>
+        </div>
+        <div class="flex row">
+          <div class="flex w-full p-4 items-center">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              class="flex flex-col w-full"
+            >
+              <div class="flex row p-2 justify-start">
+                <label>Name: </label>
+                <input
+                  type="text"
+                  name="name"
+                  class="
+                    mx-4
+                    w-full
+                    rounded-md
+                    focus:border-opacity-80
+                    border-2 border-green-300 border-opacity-0
+                  "
+                />
+              </div>
+              <div class="flex row p-2 justify-start">
+                <label>Email: </label>
+                <input
+                  type="email"
+                  name="email"
+                  class="
+                    mx-4
+                    w-full
+                    rounded-md
+                    focus:border-opacity-80
+                    border-2 border-green-300 border-opacity-0
+                  "
+                />
+              </div>
+              <div class="flex row p-2 justify-start items-center">
+                <label>Your Role: </label>
+                <div class="flex flex-col">
+                  <div class="flex row px-4 align-middle items-center">
+                    <input type="checkbox" name="owner" id="" />
+                    Business Owner
+                  </div>
+                  <div class="flex row px-4 align-middle items-center">
+                    <input type="checkbox" name="manager" id="" />
+                    Manager
+                  </div>
+                  <div class="flex row px-4 align-middle items-center">
+                    <input type="checkbox" name="techLead" id="" />
+                    Tech Lead
+                  </div>
+                  <div class="flex row px-4 align-middle items-center">
+                    <input type="checkbox" name="student" id="" />
+                    Student
+                  </div>
+                </div>
+              </div>
+              <div class="flex row p-2 justify-start items-center">
+                <label>Message: </label>
+                <textarea
+                  name="message"
+                  class="
+                    mx-4
+                    w-full
+                    rounded-md
+                    focus:border-opacity-80
+                    border-2 border-green-300 border-opacity-0
+                  "
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="
+                  bg-green-600
+                  hover:bg-green-800 hover:text-white hover:shadow-md
+                  transition-all
+                  rounded-xl
+                  p-4
+                  m-4
+                "
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <div></div>
+          <div class="flex w-full p-4">
+            <img
+              src="img/bg1.png"
+              alt=""
+              class="rounded-2xl hover:shadow-xl transition-all"
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <footer>
       <div
         class="
           px-20
           py-8
-          flex flex-col
-          items-center
-          bg-gray-500
+          flex
+          row
+          items-end
+          justify-between
+          bg-green-900
           shadow-lg
           justify-center
+          text-white
+          items-end
         "
       >
-        <div class="flex flex-col bg-red-400 self-end p-8">
-          <span>Follow Us</span>
+        <div class="flex flex-col self-start p-8">
+          Tel : (+92) 333 xxxx xxx <br />
+          Wittness House,<br />
+          Lahore
+        </div>
+        <div>© Copyright 2022. Wittness Tech</div>
+        <div class="flex flex-col self-end p-8">
+          <span>Keep in touch</span>
           <ul class="flex row justify-around">
-            <li>A</li>
-            <li>B</li>
-            <li>C</li>
+            <li>
+              <a href="https://twitter.com/wittnesstech">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  /></svg
+              ></a>
+            </li>
+            <li>
+              <a href="">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"
+                  />
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
-        <div class="flex flex-col bg-red-400 self-start p-8">
-          Tel : (+92) 020 3096 6199 <br />
-          DCSL GuideSmiths Victoria House,<br />
-          50-58 Victoria Road
-        </div>
-        <div>© Copyright 2022. DCSL GuideSmiths</div>
       </div>
     </footer>
   </body>

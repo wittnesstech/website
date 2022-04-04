@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/alpine.js"></script>
+    <link rel="stylesheet" href="./css/tailwind.min.css" />
+    <title>Wittness Tech</title>
+  </head>
+  <body
+    class="
+      w-screen
+      flex flex-col
+      justify-center
+      bg-white
+      dark:bg-gray-600
+      text-gray-900
+      dark:text-gray-50
+      text-lg
+    "
+    x-data="{ showBar: false }"
+  >
+    <div
+      class="bg-blue-500 visible lg:invisible w-screen"
+      x-data="{showMenu : false}"
+    >
+      <button
+        @click.prevent="showMenu = !showMenu "
+        class="px-2 py-4 flex justify-between bg-blue-500 text-white"
+      >
+        <svg
+          x-show="!showMenu"
+          class="w-6 h-6 mr-2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          x-show="showMenu"
+          class="w-6 h-6 mr-2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+        Menu
+      </button>
+      <div x-show="showMenu">
+        <button
+          @click.prevent="showMenu = !showMenu "
+          class="
+            px-2
+            py-4
+            font-bold
+            flex
+            justify-between
+            text-blue-900
+            w-full
+            border-b border-blue-900
+            bg-white
+          "
+        >
+          Menu
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <nav class="flex flex-col">
+          <a
+            href="#"
+            class="
+              px-2
+              py-4
+              text-blue-600
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-blue-100 hover:bg-blue-600
+            "
+          >
+            Home
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="
+              px-2
+              py-4
+              text-blue-600
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-blue-100 hover:bg-blue-600
+            "
+          >
+            About
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="
+              px-2
+              py-4
+              text-blue-600
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-blue-100 hover:bg-blue-600
+            "
+          >
+            Services
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="
+              px-2
+              py-4
+              text-blue-600
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-blue-100 hover:bg-blue-600
+            "
+          >
+            Portfolio
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="
+              px-2
+              py-4
+              text-blue-600
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-blue-100 hover:bg-blue-600
+            "
+          >
+            Contact us
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </div>
+    <!-- .bg-blue-500 -->
+    <nav
+      :class="{ 'bg-transparent rounded-b-full bg-opacity-80 hover:bg-opacity-100 border-b-8 border-green-600 shadow transition duration-1000  shadow-xl' : showBar }"
+      @scroll.window="showBar = (window.pageYOffset > 20) ? true : false"
+      class="
+        invisible
+        lg:visible
+        w-screen
+        py-2
+        text-center
+        fixed
+        top-0
+        bg-gray-200
+        transition-all
+        duration-1000
+        flex
+        items-center
+        justify-center
+        text-gray-800 text-xs
+        font-bold
+        text-xl
+        uppercase
+        shadow-md
+        hover:shadow-lg hover:text-gray-900
+      "
+    >
+      <div class="flex flex-row w-1/6 pl-8">
+        <svg
+          width="64"
+          height="64"
+          viewBox="0 0 16.933333 16.933334"
+          version="1.1"
+          id="svg1114"
+          inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+          sodipodi:docname="wittness1.svg"
+          xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+          xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:svg="http://www.w3.org/2000/svg"
+        >
+          <defs id="defs1111" />
+          <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+            <g
+              id="g7455"
+              transform="matrix(0.38886891,0,0,0.33252078,2.5922963,6.6588457)"
+            >
+              <path
+                id="path3373"
+                style="
+                  font-variation-settings: normal;
+                  fill: #ff0000;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.944175;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 12.6;
+                  stroke-dasharray: none;
+                  stroke-dashoffset: 0;
+                  stroke-opacity: 0.996059;
+                  paint-order: normal;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="-4.3811044e-06"
+                inkscape:transform-center-y="-7.5409504"
+                d="m 15.10656,-17.037008 c -2.38895,13.363909 -4.77798,26.727804 -7.16752,40.091609 1.22654,-4.287488 3.81653,-8.246541 7.1856,-11.078392 3.35487,2.900669 5.92499,6.783162 7.14892,11.074259 -2.38888,-13.362514 -4.77793,-26.724997 -7.167,-40.087476 z"
+                sodipodi:nodetypes="ccccc"
+              />
+              <path
+                id="path2954"
+                style="
+                  fill: #ffffff44;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.944175;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 11;
+                  stroke-dasharray: none;
+                  stroke-opacity: 0.996059;
+                  paint-order: fill markers stroke;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="1.270063e-05"
+                inkscape:transform-center-y="19.399231"
+                d="m 28.76599,11.98086 c -0.26192,-0.768957 -0.55795,-1.519733 -0.88677,-2.248958 -0.88326,4.11362 -1.76643,8.227171 -2.64945,12.340846 -0.40928,2.200228 -1.70075,6.780581 -1.70075,6.780581 0,0 -1.2913,-4.58006 -1.70062,-6.780616 C 20.94537,17.95904 20.0622,13.845481 19.17894,9.731867 l -0.85782,2.172475 C 18.10713,9.779439 17.6569,7.680438 16.97081,5.665964 16.84233,5.155353 16.59031,4.674235 16.39203,4.183366 l 0.91106,-4.242117 c 8.33957,-2.347036 14.49004,-9.893025 16.23006,-11.923092 z"
+                sodipodi:nodetypes="cccccccccccc"
+              />
+              <path
+                id="path7338"
+                style="
+                  fill: #ffffff44;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.944175;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 11;
+                  stroke-dasharray: none;
+                  stroke-opacity: 0.996059;
+                  paint-order: fill markers stroke;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="-1.0612715e-05"
+                inkscape:transform-center-y="19.399231"
+                d="m 1.44661,11.98086 c 0.26192,-0.768957 0.55795,-1.519733 0.88677,-2.248958 0.88326,4.11362 1.76643,8.227171 2.64945,12.340846 0.40928,2.200228 1.70075,6.780581 1.70075,6.780581 0,0 1.2913,-4.58006 1.70062,-6.780616 0.88303,-4.113673 1.7662,-8.227232 2.64946,-12.340846 l 0.85782,2.172475 C 12.10547,9.779439 12.5557,7.680438 13.24179,5.665964 13.37027,5.155353 13.62229,4.674235 13.82057,4.183366 L 12.90951,-0.058751 C 4.56994,-2.405787 -1.58053,-9.951776 -3.32055,-11.981843 Z"
+                sodipodi:nodetypes="cccccccccccc"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="flex flex-row w-4\/6">
+        <ul class="flex row pl-6">
+          <li class="pr-6 hover:text-green-600">
+            <a href="#aboutUs"> About Us </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#services"> Services </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#process"> Process </a>
+          </li>
+          <!-- <li class="pr-6 hover:text-green-600">
+            <a href="#industries"> Industries </a>
+          </li> -->
+          <li class="pr-6 hover:text-green-600">
+            <a href="#caseStudies"> Case Studies </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#contact"> Contact Us </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-row w-1/6"></div>
+    </nav>
+    <div
+      class="
+        p-20
+        pt-40
+        shadow-inner
+        h-screen
+        text-gray-100 text-center
+        flex flex-col
+        justify-between
+      "
+      style="background-image: url(./img/bg1.png); background-attachment: fixed"
+    >
+      <h1 class="pt-12 text-9xl font-extrabold text-green-500 text-center">
+        Wittness Tech
+      </h1>
+      <!-- <h2 class="pt-8 text-4xl">Software Consultancy</h2> -->
+      <p class="pb-8 text-2xl">
+        We’re witnessing the fastest technology transformation in modern
+        history,<br />businesses today can either catch up or die!
+        <br />Everything is being automated, which is both a tremendous threat
+        and opportunity for companies.
+        <br />
+        In short . . . Software is eating the world.
+        <br />
+        If you need help with the technology gap that stand between you and an
+        efficient business workflow,<br />our software consultants can help.
+      </p>
+    </div>
+    <div id="aboutUs">
+      <div class="h-screen pt-40 bg-yellow-200 p-20 flex flex-row">
+        Our Story
+      </div>
+      <div class="h-screen pt-40 bg-red-200 p-20 flex flex-row">
+        Our Mission
+      </div>
+      <div class="h-screen pt-40 bg-yellow-200 p-20 flex flex-row">
+        Our Team
+      </div>
+    </div>
+  </body>
+</html>
