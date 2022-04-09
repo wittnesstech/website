@@ -360,21 +360,31 @@
         h-screen
         text-white text-center
         flex flex-col
-        justify-around
+        justify-evenly
+        bg-[url('./img/bg2.jpg')]
+        object-cover
+        bg-fixed bg-cover
       "
-      style="background-image: url(./img/bg1.png); background-attachment: fixed"
     >
       <h1
         class="
           flex flex-col
           items-center
-          md:pt-12
+          md:p-8
           text-3xl
           overflow-visible
           md:text-9xl
           font-extrabold
           text-green-500 text-center
+          bg-opacity-70 bg-black
+          w-max
+          self-center
+          rounded-3xl
+          p-4
           font-serif
+          md:hover:text-red-500 md:hover:shadow-2xl
+          transition-all
+          duration-1000
         "
       >
         <svg
@@ -460,10 +470,20 @@
         Wittness Tech
       </h1>
       <!-- <h2 class="pt-8 text-4xl">Software Consultancy</h2> -->
-      <p class="pb-8 text-base md:pb-8 md:text-2xl">
+      <p
+        class="
+          p-4
+          text-base
+          md:p-8 md:text-3xl
+          bg-opacity-70 bg-black
+          rounded-xl
+          leading-relaxed
+        "
+      >
         We’re witnessing the fastest technology transformation in modern
         history, businesses today can either
         <span class="text-red-500 font-bold">Catch up or Die!</span>
+        <br />
         <br />
         To bridge the technology gap that stands between you and a modern
         business, our software consultants can help.
@@ -500,7 +520,7 @@
           <!-- <div class="flex row"> -->
           <div class="flex w-full h-full p-2 relative md:grid grid-cols-2">
             <img
-              src="img/bg1.png"
+              src="img/story.jpg"
               alt=""
               class="
                 rounded-lg
@@ -519,6 +539,10 @@
                 p-4
                 text-justify text-base text-white
                 absolute
+                bg-opacity-80 bg-black
+                md:bg-opacity-0 md:relative md:text-black
+                inset-0
+                rounded-2xl
                 md:relative md:text-black
                 text-center
                 leading-4
@@ -572,7 +596,7 @@
           </div>
           <div class="flex w-full h-full p-2 relative md:grid grid-cols-2">
             <img
-              src="img/bg1.png"
+              src="img/mission.jpg"
               alt=""
               class="
                 rounded-lg
@@ -591,10 +615,12 @@
                 p-4
                 text-justify text-base text-white
                 absolute
-                md:relative md:text-black
+                bg-opacity-80 bg-black
+                md:bg-opacity-0 md:relative md:text-black
+                inset-0
+                rounded-2xl
                 text-center
                 leading-4
-                inset-x-0
                 md:text-2xl
                 flex
                 items-center
