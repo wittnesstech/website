@@ -14,7 +14,7 @@
     x-data="{ showBar: false }"
   >
     <div
-      class="bg-green-600 visible md:invisible w-screen"
+      class="bg-green-600 visible md:invisible w-screen z-20"
       x-data="{showMenu : false}"
     >
       <button
@@ -216,9 +216,10 @@
     </div>
     <!-- .bg-blue-500 -->
     <nav
-      :class="{ 'bg-transparent rounded-b-full bg-opacity-80 hover:bg-opacity-100 border-b-8 border-green-600 shadow transition duration-1000  shadow-xl' : showBar }"
+      :class="{ 'bg-white rounded-b-full bg-opacity-80 hover:bg-opacity-100 border-b-8 border-green-600 shadow transition duration-1000  shadow-xl' : showBar }"
       @scroll.window="showBar = (window.pageYOffset > 20) ? true : false"
       class="
+        z-20
         invisible
         md:visible
         w-screen
@@ -470,7 +471,15 @@
     <div id="aboutUs">
       <!-- ONE PAGE -->
       <div
-        class="h-screen md:pt-36 bg-sky-100 md:p-20 flex flex-col md:flex-row"
+        class="
+          h-screen
+          md:pt-36 md:p-20
+          flex flex-col
+          md:flex-row
+          bg-gradient-to-b
+          from-sky-50
+          to-sky-200
+        "
       >
         <div
           class="
@@ -533,7 +542,17 @@
       </div>
       <!-- ONE PAGE -->
       <div
-        class="h-screen md:pt-36 bg-sky-200 md:p-20 flex flex-col md:flex-row"
+        class="
+          h-screen
+          md:pt-36
+          bg-sky-200
+          md:p-20
+          flex flex-col
+          md:flex-row
+          bg-gradient-to-b
+          from-sky-200
+          to-green-200
+        "
       >
         <div
           class="
@@ -599,7 +618,19 @@
         </div>
       </div>
       <!-- ONE PAGE -->
-      <div class="h-full md:pt-36 bg-sky-100 md:p-20 flex flex-col md:flex-row">
+      <div
+        class="
+          h-full
+          md:pt-36
+          bg-sky-100
+          md:p-20
+          flex flex-col
+          md:flex-row
+          bg-gradient-to-b
+          from-green-200
+          to-sky-50
+        "
+      >
         <div
           class="
             flex flex-col
@@ -689,7 +720,17 @@
     </div>
     <div
       id="services"
-      class="h-full p-2 md:pt-40 bg-rose-100 md:p-20 shadow-inner"
+      class="
+        h-full
+        p-2
+        md:pt-40
+        bg-rose-100
+        md:p-20
+        shadow-inner
+        bg-gradient-to-b
+        from-sky-50
+        to-rose-200
+      "
     >
       <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
         How our Software Consultants can help you
@@ -720,7 +761,17 @@
     </div>
     <div
       id="process"
-      class="h-full p-2 md:pt-40 bg-rose-200 md:p-20 shadow-inner"
+      class="
+        h-full
+        p-2
+        md:pt-40
+        bg-rose-200
+        md:p-20
+        shadow-inner
+        bg-gradient-to-b
+        from-rose-200
+        to-rose-300
+      "
     >
       <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
         Understanding your business
@@ -808,7 +859,20 @@
         </div>
       </div>
     </div>
-    <div id="" class="h-full p-2 md:pt-40 bg-rose-100 md:p-20 shadow-inner">
+    <div
+      id=""
+      class="
+        h-full
+        p-2
+        md:pt-40
+        bg-rose-100
+        md:p-20
+        shadow-inner
+        bg-gradient-to-b
+        from-rose-300
+        to-rose-50
+      "
+    >
       <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
         About our System Consultants
       </h2>
@@ -840,7 +904,17 @@
 
     <div
       id="caseStudies"
-      class="h-full p-2 md:pt-40 bg-gray-300 md:p-20 shadow-inner"
+      class="
+        h-full
+        p-2
+        md:pt-40
+        bg-gray-300
+        md:p-20
+        shadow-inner
+        bg-gradient-to-b
+        from-gray-300
+        to-lime-300
+      "
     >
       <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
         Examples of Work
@@ -1035,7 +1109,17 @@
     </div>
     <div
       id="contact"
-      class="md:pt-36 bg-green-400 md:p-20 flex flex-col md:flex-row h-auto"
+      class="
+        md:pt-36
+        bg-green-400
+        md:p-20
+        flex flex-col
+        md:flex-row
+        h-auto
+        bg-gradient-to-b
+        from-lime-300
+        to-gray-300
+      "
     >
       <div
         class="
@@ -1212,6 +1296,10 @@
           bg-zinc-900
           shadow-lg
           text-white
+          bg-gradient-to-b
+          from-gray-900
+          via-green-900
+          to-black
         "
       >
         <div
