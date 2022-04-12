@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./js/alpine.js"></script>
     <script src="./js/tailwind.min.js"></script>
+    <script src="./js/aos.js"></script>
     <!-- <link rel="stylesheet" href="./css/tailwind.min.css" /> -->
+    <link rel="stylesheet" href="./css/aos.css" />
     <title>Wittness Tech</title>
   </head>
   <body
@@ -502,6 +504,7 @@
           from-sky-50
           to-sky-200
         "
+        data-aos="zoom-in-up"
       >
         <div
           class="
@@ -590,6 +593,7 @@
             border-green-600 border-4 border-opacity-0
             transition-all
           "
+          data-aos="zoom-in-up"
         >
           <div class="text-center text-4xl p-2 pb-8 font-black underline">
             Our Mission
@@ -669,13 +673,17 @@
             border-green-600 border-4 border-opacity-0
             transition-all
           "
+          data-aos="zoom-in-up"
         >
           <div class="text-center text-4xl p-2 pb-8 font-black underline">
             Our Team
           </div>
           <div class="flex flex-col md:flex-row justify-around items-center">
             <!-- CEO -->
-            <div class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg">
+            <div
+              class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg"
+              data-aos="zoom-in-left"
+            >
               <img
                 src="https://github.com/usman092.png"
                 alt=""
@@ -705,7 +713,10 @@
               </div>
             </div>
             <!-- Design Advisor -->
-            <div class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg">
+            <div
+              class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg"
+              data-aos="zoom-in-left"
+            >
               <img
                 src="https://github.com/thenewadeel.png"
                 alt=""
@@ -737,7 +748,10 @@
               </div>
             </div>
             <!-- Tech Lead -->
-            <div class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg">
+            <div
+              class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg"
+              data-aos="zoom-in-left"
+            >
               <img
                 src="img/default-photo.png"
                 alt=""
@@ -756,7 +770,10 @@
               </div>
             </div>
             <!-- HR Manager -->
-            <div class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg">
+            <div
+              class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg"
+              data-aos="zoom-in-left"
+            >
               <img
                 src="img/default-photo.png"
                 alt=""
@@ -793,32 +810,39 @@
         to-rose-200
       "
     >
-      <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
-        How our Software Consultants can help you
-      </h2>
-      <p class="text-base md:py-4 p-2 text-justify indent-8">
-        Over the years, we at Wittness have developed a keen eye in identifying
-        software needs that can increase the efficieny of businesses. We have
-        worked on numerous tech stacks in various business domains, resulting in
-        customer satisafaction. Our team can consult with your business for as
-        little or as long as you need and give support as required. Our key
-        services include Design & Deployment on the following :
-      </p>
-      <ul class="flex flex-col text-base leading-5 indent-4">
-        <li class="md:py-2"><span class="px-2">O</span> Web infrastructure</li>
-        <li class="md:py-2">
-          <span class="px-2">O</span> Distributed Web based infrastructure
-        </li>
-        <li class="md:py-2"><span class="px-2">O</span> On site solutions</li>
-        <li class="md:py-2"><span class="px-2">O</span> Cloud services</li>
-        <li class="md:py-2">
-          <span class="px-2">O</span> Windows/ Android/ Mac/ iOS and Linux based
-          stand-alone business Applications
-        </li>
-        <li class="md:py-2">
-          <span class="px-2">O</span> Setting up network infrastructure
-        </li>
-      </ul>
+      <div data-aos="zoom-in-up">
+        <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
+          How our Software Consultants can help you
+        </h2>
+        <p class="text-base md:py-4 p-2 text-justify indent-8">
+          Over the years, we at Wittness have developed a keen eye in identifying
+          software needs that can increase the efficieny of businesses. We have
+          worked on numerous tech stacks in various business domains, resulting in
+          customer satisafaction. Our team can consult with your business for as
+          little or as long as you need and give support as required. Our key
+          services include Design & Deployment on the following :
+         </p>
+        <ul
+          class="flex flex-col text-base leading-5 indent-4"
+          data-aos="zoom-in-left"
+        >
+          <li class="md:py-2">
+            <span class="px-2">O</span> Web infrastructure
+          </li>
+          <li class="md:py-2">
+            <span class="px-2">O</span> Distributed Web based infrastructure
+          </li>
+          <li class="md:py-2"><span class="px-2">O</span> On site solutions</li>
+          <li class="md:py-2"><span class="px-2">O</span> Cloud services</li>
+          <li class="md:py-2">
+            <span class="px-2">O</span> Windows/ Android/ Mac/ iOS and Linux
+            based stand-alone business Applications
+          </li>
+          <li class="md:py-2">
+            <span class="px-2">O</span> Setting up network infrastructure
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- Process Section -->
     <div
@@ -835,89 +859,94 @@
         to-rose-300
       "
     >
-      <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
-        Understanding your business
-      </h2>
-      <p class="text-base md:py-4 p-2 text-justify indent-8">
-        Before we even think about making any recommendations, we spend time
-        talking to management and staff and getting to know your business. We
-        then look at the capabilities of your existing system and analyse your
-        business operations to determine where any efficiencies could be made
-        and what, currently, stands in the way of achieving this.
-      </p>
-      <p class="text-base md:py-4 p-2 text-justify indent-8">
-        By having this bigger picture, we ensure that our recommendations
-        accurately and effectively meet your business needs and the requirements
-        of your particular organisation.
-      </p>
-      <div class="flex flex-col md:flex-row">
-        <div
-          class="
-            md:py-4
-            w-full
-            self-center
-            rounded-xl
-            p-2
-            md:m-2
-            hover:border-green-500 hover:shadow-xl
-            transition-all
-            text-base
-          "
-        >
-          <h3 class="text-xl md:p-4 text-center font-bold">
-            Business analysis
-          </h3>
-          <ul class="text-base indent-8">
-            <li><span class="px-2 md:px-4">O</span>Requirements analysis</li>
-            <li>
-              <span class="px-2 md:px-4">O</span>Collaborative prototyping
-            </li>
-            <li><span class="px-2 md:px-4">O</span>Application structure</li>
-            <li><span class="px-2 md:px-4">O</span>Technical specification</li>
-          </ul>
-        </div>
-        <div
-          class="
-            md:py-4
-            w-full
-            self-center
-            rounded-xl
-            p-2
-            md:m-2
-            hover:border-green-500 hover:shadow-xl
-            transition-all
-            text-base
-          "
-        >
+      <div data-aos="zoom-in-up">
+        <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
+          Understanding your business
+        </h2>
+        <p class="text-base md:py-4 p-2 text-justify indent-8">
+          Before we even think about making any recommendations, we spend time
+          talking to management and staff and getting to know your business. We
+          then look at the capabilities of your existing system and analyse your
+          business operations to determine where any efficiencies could be made
+          and what, currently, stands in the way of achieving this.
+        </p>
+        <p class="text-base md:py-4 p-2 text-justify indent-8">
+          By having this bigger picture, we ensure that our recommendations
+          accurately and effectively meet your business needs and the requirements
+          of your particular organisation.
+        </p>
+        <div class="flex flex-col md:flex-row">
+          <div
+            class="
+              md:py-4
+              w-full
+              self-center
+              rounded-xl
+              p-2
+              md:m-2
+              hover:border-green-500 hover:shadow-xl
+              transition-all
+              text-base
+            "
+            data-aos="zoom-in-left"
+          >
+            <h3 class="text-xl md:p-4 text-center font-bold">
+              Business analysis
+            </h3>
+            <ul class="text-base indent-8">
+              <li><span class="px-2 md:px-4">O</span>Requirements analysis</li>
+              <li>
+                <span class="px-2 md:px-4">O</span>Collaborative prototyping
+              </li>
+              <li><span class="px-2 md:px-4">O</span>Application structure</li>
+              <li><span class="px-2 md:px-4">O</span>Technical specification</li>
+            </ul>
+          </div>
+          <div
+            class="
+              md:py-4
+              w-full
+              self-center
+              rounded-xl
+              p-2
+              md:m-2
+              hover:border-green-500 hover:shadow-xl
+              transition-all
+              text-base
+            "
+            data-aos="zoom-in-left"
+          >
           <h3 class="text-xl md:p-4 text-center font-bold">Systems analysis</h3>
-          <ul class="text-base indent-8">
-            <li><span class="p-2 md:px-4">O</span>Technical solution</li>
-            <li><span class="p-2 md:px-4">O</span>Support plan</li>
-            <li><span class="p-2 md:px-4">O</span>Stakeholders</li>
-          </ul>
-        </div>
-        <div
-          class="
-            md:py-4
-            w-full
-            self-center
-            rounded-xl
-            p-2
-            md:m-2
-            hover:border-green-500 hover:shadow-xl
-            transition-all
-            text-base
-          "
-        >
-          <h3 class="text-xl md:p-4 text-center font-bold">
-            Operational analysis
-          </h3>
-          <ul class="text-base indent-8">
-            <li><span class="p-2 md:px-4">O</span>Development methodology</li>
-            <li><span class="p-2 md:px-4">O</span>Coding standards</li>
-            <li><span class="p-2 md:px-4">O</span>System management</li>
-            <li><span class="p-2 md:px-4">O</span>Quality assurance</li>
-          </ul>
+            <ul class="text-base indent-8">
+              <li><span class="p-2 md:px-4">O</span>Technical solution</li>
+              <li><span class="p-2 md:px-4">O</span>Support plan</li>
+              <li><span class="p-2 md:px-4">O</span>Stakeholders</li>
+            </ul>
+          </div>
+          <div
+            class="
+              md:py-4
+              w-full
+              self-center
+              rounded-xl
+              p-2
+              md:m-2
+              hover:border-green-500 hover:shadow-xl
+              transition-all
+              text-base
+            "
+            data-aos="zoom-in-left"
+          >
+            <h3 class="text-xl md:p-4 text-center font-bold">
+              Operational analysis
+            </h3>
+            <ul class="text-base indent-8">
+              <li><span class="p-2 md:px-4">O</span>Development methodology</li>
+              <li><span class="p-2 md:px-4">O</span>Coding standards</li>
+              <li><span class="p-2 md:px-4">O</span>System management</li>
+              <li><span class="p-2 md:px-4">O</span>Quality assurance</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -936,33 +965,35 @@
         to-rose-50
       "
     >
-      <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
-        About our System Consultants
-      </h2>
-      <p class="text-base md:py-4 p-2 text-justify indent-8">
-        Our Consultants are highly experienced Technical Architects and Software
-        Developers, meaning they recognise not only what is required from a
-        business perspective, but also what is achievable from a technical
-        standpoint. They have many years of hands-on experience of guiding
-        companies through technology change.
-      </p>
-      <p class="text-base md:py-4 p-2 text-justify indent-8">
-        Advising on the best technology solution for your business, our
-        Consultants are here to offer help and guidance on how to overcome the
-        huge challenges posed by the development of large-scale complex software
-        systems, such as:
-      </p>
-      <ul class="text-base indent-8">
-        <li><span class="p-2 md:px-4">O</span>Avoiding late software</li>
-        <li><span class="p-2 md:px-4">O</span>Delivery going over budget</li>
-        <li>
-          <span class="p-2 md:px-4">O</span>Functionality resolving
-          complexities/ sensitivities with the alignment of company goals
-        </li>
-        <li>
-          <span class="p-2 md:px-4">O</span>Integrating new and existing systems
-        </li>
-      </ul>
+      <div data-aos="zoom-in-up">
+        <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
+          About our System Consultants
+        </h2>
+        <p class="text-base md:py-4 p-2 text-justify indent-8">
+          Our Consultants are highly experienced Technical Architects and Software
+          Developers, meaning they recognise not only what is required from a
+          business perspective, but also what is achievable from a technical
+          standpoint. They have many years of hands-on experience of guiding
+          companies through technology change.
+        </p>
+        <p class="text-base md:py-4 p-2 text-justify indent-8">
+          Advising on the best technology solution for your business, our
+          Consultants are here to offer help and guidance on how to overcome the
+          huge challenges posed by the development of large-scale complex software
+          systems, such as:
+        </p>
+        <ul class="text-base indent-8">
+          <li><span class="p-2 md:px-4">O</span>Avoiding late software</li>
+          <li><span class="p-2 md:px-4">O</span>Delivery going over budget</li>
+          <li>
+            <span class="p-2 md:px-4">O</span>Functionality resolving
+            complexities/ sensitivities with the alignment of company goals
+          </li>
+          <li>
+            <span class="p-2 md:px-4">O</span>Integrating new and existing systems
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- Work Examples Section -->
     <div
@@ -1001,6 +1032,7 @@
             hover:shadow-2xl
             transition-all
           "
+          data-aos="zoom-in-left"
         >
           <div
             class="
@@ -1053,6 +1085,7 @@
             hover:shadow-2xl
             transition-all
           "
+          data-aos="zoom-in-left"
         >
           <div
             class="
@@ -1102,6 +1135,7 @@
             hover:shadow-2xl
             transition-all
           "
+          data-aos="zoom-in-left"
         >
           <div
             class="
@@ -1151,6 +1185,7 @@
             hover:shadow-2xl
             transition-all
           "
+          data-aos="zoom-in-left"
         >
           <div
             class="
@@ -1214,6 +1249,7 @@
           transition-all
           border-4
         "
+        data-aos="zoom-in-up"
       >
         <div class="text-center text-lg md:p-2 font-bold">
           Are you looking for a bespoke software solution for your business?
@@ -1452,4 +1488,7 @@
       </div>
     </footer>
   </body>
+  <script>
+    AOS.init();
+  </script>
 </html>
