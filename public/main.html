@@ -38,6 +38,9 @@
     </script>
 
     <style type="text/tailwindcss">
+      div {
+        /* border: 2px solid green; */
+      }
       @font-face {
         font-family: "Cyborg Punk";
         src: url("./fonts/Cyborg\ Punk.eot");
@@ -214,7 +217,7 @@
           >
             <!-- <p class="p-4 text-base md:p-8 md:text-3xl bg-opacity-70 bg-black rounded-xl leading-relaxed"> -->
             We’re witnessing the fastest technology transformation in modern history, businesses today can either
-            <span class="text-red-500 font-bold">Catch up or Die!</span>
+            <span class="text-blue-500 font-bold text-xl">Catch up or Die!</span>
             <br />
             <br />
             To bridge the technology gap that stands between you and a modern business, our software consultants can
@@ -235,8 +238,8 @@
                 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl"
               >
                 <span class="block xl:inline">When brothers become </span>
-                <span class="block text-indigo-600 xl:inline" data-primary="indigo-600">tech engineers </span>&
-                <span class="block text-indigo-600 xl:inline" data-primary="indigo-600">problem solvers.</span>
+                <span class="block text-blue-600 xl:inline" data-primary="blue-600">tech engineers </span>&
+                <span class="block text-blue-600 xl:inline" data-primary="blue-600">problem solvers.</span>
               </h1>
               <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">
                 Wittness is proudly helping organisations in forming the technical stack tailored for their unique
@@ -245,8 +248,8 @@
               <div class="relative flex flex-col sm:flex-row sm:space-x-4">
                 <a
                   href="#_"
-                  class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-indigo-600 rounded-md sm:mb-0 hover:bg-indigo-700 sm:w-auto"
-                  data-primary="indigo-600"
+                  class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-blue-600 rounded-md sm:mb-0 hover:bg-blue-700 sm:w-auto"
+                  data-primary="blue-600"
                   data-rounded="rounded-md"
                 >
                   Try It Free
@@ -280,8 +283,7 @@
           class="text-4xl font-extrabold tracking-tight text-left text-gray-900 sm:text-5xl md:text-6xl md:text-center"
         >
           <span class="block"
-            >Our
-            <span class="block mt-1 text-purple-500 lg:inline lg:mt-0" data-primary="purple-500">Mission</span></span
+            >Our <span class="block mt-1 text-blue-500 lg:inline lg:mt-0" data-primary="blue-500">Mission</span></span
           >
         </h1>
         <p
@@ -297,8 +299,8 @@
         <div class="relative flex flex-col justify-center md:flex-row md:space-x-4">
           <a
             href="#_"
-            class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-purple-500 rounded-md md:mb-0 hover:bg-purple-700 md:w-auto"
-            data-primary="purple-500"
+            class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-blue-500 rounded-md md:mb-0 hover:bg-blue-700 md:w-auto"
+            data-primary="blue-500"
             data-rounded="rounded-md"
           >
             Try It Free
@@ -520,7 +522,7 @@
       id="services"
       class="flex items-center justify-center py-10 text-white bg-white sm:py-16 md:py-24 lg:py-32"
     >
-      <div class="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
+      <div class="relative max-w-3xl md:px-10 text-center text-white auto lg:px-0">
         <div class="flex flex-col w-full md:flex-row">
           <!-- Top Text -->
           <div class="flex justify-between">
@@ -752,42 +754,39 @@
 
     <section id="caseStudies" class="relative w-full bg-white">
       <div class="absolute w-full h-32 bg-gradient-to-b from-gray-100 to-white"></div>
-      <div class="relative w-full px-5 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
+      <div class="relative w-full px-1 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
         <h1 class="mb-1 text-4xl font-extrabold leading-none text-gray-900 lg:text-5xl xl:text-6xl sm:mb-3">
           <a href="#_">The Project Blog</a>
         </h1>
         <p class="text-lg font-medium text-gray-500 sm:text-2xl">Designs and layouts to help you with your app.</p>
-        <div class="flex grid h-full grid-cols-12 gap-10 pb-10 mt-8 sm:mt-16">
+        <div class="flex flex-col md:flex-row h-full gap-2 pb-10 mt-8 sm:mt-16">
           <div
-            class="relative flex flex-col items-start justify-end h-full col-span-12 overflow-hidden rounded-xl group md:col-span-6 xl:col-span-4"
+            class="relative w-full flex flex-col items-start group justify-around h-full overflow-hidden rounded-xl group"
           >
             <a
               href="#_"
-              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 hover:scale-110"
+              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 group-hover:scale-110"
               style="background-image: url('https://cdn.devdojo.com/images/may2021/quench-satisfying.jpg')"
             >
             </a>
-            <div class="relative z-20 w-full h-auto py-8 text-white bg-purple-500 border-t-0 border-yellow-200 px-7">
+            <div class="relative z-20 w-full h-full py-8 text-white bg-blue-500 border-t-0 border-yellow-200 px-7">
               <a
                 href="#_"
-                class="inline-block text-xs font-semibold absolute top-0 -mt-3.5 rounded-full px-4 py-2 uppercase text-purple-500 bg-white"
+                class="inline-block text-xs font-semibold absolute top-0 -mt-3.5 rounded-full px-4 py-2 uppercase text-blue-500 bg-white"
                 >Real Time</a
               >
-              <h2 class="mb-5 text-5xl font-bold"><a href="#_"> Digital Fleet Management </a></h2>
-              <p class="mb-2 text-lg font-normal text-purple-100 opacity-100">
-                Logistics operations are time critical and need a constant lookout to identify bottle necks and possible
-                points of failure. We provide continuous monitoring of all elements involved in tranport and delivery
-                cycles.
+              <h2 class="mb-5 text-3xl md:text-5xl font-bold"><a href="#_"> Digital Fleet Management </a></h2>
+              <p class="mb-2 text-lg font-normal text-blue-100 opacity-100">
+                Logistics operations are time critical and need a lookout to identify possible points of failure. We
+                provide continuous monitoring of all elements involved in tranport and delivery cycles.
               </p>
             </div>
           </div>
 
-          <div
-            class="relative flex flex-col items-start justify-end h-full col-span-12 overflow-hidden rounded-xl group md:col-span-6 xl:col-span-4"
-          >
+          <div class="relative w-full flex flex-col items-start justify-around h-full overflow-hidden rounded-xl group">
             <a
               href="#_"
-              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 hover:scale-110"
+              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 group-hover:scale-110"
               style="background-image: url('https://cdn.devdojo.com/images/may2021/orange.jpg')"
             >
             </a>
@@ -797,7 +796,7 @@
                 class="inline-block text-xs font-semibold absolute top-0 -mt-3.5 rounded-full px-4 py-2 uppercase text-blue-500 bg-white"
                 >Lifestyle</a
               >
-              <h2 class="mb-5 text-5xl font-bold"><a href="#_">Restaurant Management</a></h2>
+              <h2 class="mb-5 text-3xl md:text-5xl font-bold"><a href="#_">Restaurant Management</a></h2>
               <p class="mb-2 text-lg font-normal text-blue-100 opacity-100">
                 Restoronta give you flexibility to run your restaurant business with minimum fuss. Staff management,
                 reporting and administration are built-in. Products and kitchen provide intuitive workflow.
@@ -805,101 +804,25 @@
             </div>
           </div>
 
-          <div
-            class="relative flex flex-col items-start justify-end h-full col-span-12 overflow-hidden rounded-xl group sm:col-span-12 xl:col-span-4 sm:flex-row xl:flex-col"
-          >
+          <div class="relative w-full flex flex-col items-start justify-around h-full overflow-hidden rounded-xl group">
             <a
               href="#_"
-              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 hover:scale-110"
+              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 group-hover:scale-110"
               style="background-image: url('https://cdn.devdojo.com/images/may2021/gbc.jpg')"
             ></a>
             <div
-              class="relative z-20 flex flex-col items-start justify-center w-full h-auto py-8 text-white bg-yellow-400 border-t-0 border-yellow-200 sm:h-full xl:h-auto px-7"
+              class="relative z-20 flex flex-col items-start justify-center w-full h-auto py-8 text-white bg-yellow-400 border-t-0 border-yellow-200 sm:h-full xl:h-full px-7"
             >
               <a
                 href="#_"
                 class="inline-block text-xs font-semibold absolute sm:mb-5 xl:mb-0 sm:relative xl:absolute top-0 -mt-3.5 rounded-full px-4 py-2 uppercase text-yellow-400 bg-white"
                 >Education</a
               >
-              <h2 class="mb-5 text-5xl font-bold"><a href="#_">Open School Initiative</a></h2>
+              <h2 class="mb-5 text-3xl md:text-5xl font-bold"><a href="#_">Open School Initiative</a></h2>
               <p class="mb-2 text-lg font-normal opacity-100 text-yellow-50">
                 Open school architecture with distributed learning resources. Made for both teachers and students. Share
                 your knowledge base and help achieve better education standards.
               </p>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-12 col-span-12 gap-7">
-            <div
-              class="flex flex-col items-start col-span-12 overflow-hidden shadow-sm rounded-xl md:col-span-6 lg:col-span-4"
-            >
-              <a href="#_" class="block transition duration-200 ease-out transform hover:scale-110">
-                <img
-                  class="object-cover w-full shadow-sm max-h-56"
-                  src="https://cdn.devdojo.com/images/may2021/workstation.jpg"
-                />
-              </a>
-              <div
-                class="relative flex flex-col items-start px-6 bg-white border border-t-0 border-gray-200 py-7 rounded-b-2xl"
-              >
-                <div
-                  class="bg-indigo-400 absolute top-0 -mt-3 flex items-center px-3 py-1.5 leading-none w-auto inline-block rounded-full text-xs font-medium uppercase text-white inline-block"
-                >
-                  <span>Embedded</span>
-                </div>
-                <h2 class="text-base font-bold sm:text-lg md:text-xl">
-                  <a href="#_">Digital Fleet Management</a>
-                </h2>
-                <p class="mt-2 text-sm text-gray-500">Fleet management made easy using digital solutions.</p>
-              </div>
-            </div>
-
-            <div
-              class="flex flex-col items-start col-span-12 overflow-hidden shadow-sm rounded-xl md:col-span-6 lg:col-span-4"
-            >
-              <a href="#_" class="block transition duration-200 ease-out transform hover:scale-110">
-                <img
-                  class="object-cover w-full shadow-sm max-h-56"
-                  src="https://cdn.devdojo.com/images/may2021/snacks.jpg"
-                />
-              </a>
-              <div
-                class="relative flex flex-col items-start px-6 bg-white border border-t-0 border-gray-200 py-7 rounded-b-2xl"
-              >
-                <div
-                  class="bg-red-400 absolute top-0 -mt-3 flex items-center px-3 py-1.5 leading-none w-auto inline-block rounded-full text-xs font-medium uppercase text-white inline-block"
-                >
-                  <span>Food</span>
-                </div>
-                <h2 class="text-base font-bold sm:text-lg md:text-xl"><a href="#_">Eating for Productivity</a></h2>
-                <p class="mt-2 text-sm text-gray-500">
-                  Learn how to be more disciplined in your diet and how you can eat to maximize productivity.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="flex flex-col items-start col-span-12 overflow-hidden shadow-sm rounded-xl md:col-span-6 lg:col-span-4"
-            >
-              <a href="#_" class="block transition duration-200 ease-out transform hover:scale-110">
-                <img
-                  class="object-cover w-full shadow-sm max-h-56"
-                  src="https://cdn.devdojo.com/images/may2021/book-design.jpg"
-                />
-              </a>
-              <div
-                class="relative flex flex-col items-start px-6 bg-white border border-t-0 border-gray-200 py-7 rounded-b-2xl"
-              >
-                <div
-                  class="bg-purple-500 absolute top-0 -mt-3 flex items-center px-3 py-1.5 leading-none w-auto inline-block rounded-full text-xs font-medium uppercase text-white inline-block"
-                >
-                  <span>Resources</span>
-                </div>
-                <h2 class="text-base font-bold sm:text-lg md:text-xl"><a href="#_">A Design Mind-set</a></h2>
-                <p class="mt-2 text-sm text-gray-500">
-                  What does it mean to have a design mind-set? Learn how to improve your eye for design.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -1288,7 +1211,7 @@
     <section class="text-gray-700 bg-white body-font">
       <div class="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row">
         <a href="#/" class="text-xl font-black leading-none text-gray-900 select-none logo"
-          >Wittness Tech<span class="text-indigo-600">.</span></a
+          >Wittness Tech<span class="text-blue-600">.</span></a
         >
         <p class="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0">
           &copy; 2021 Wittness Tech
