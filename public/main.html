@@ -34,12 +34,16 @@
             },
           },
         },
+        // plugins: [require("@tailwindcss/forms")],
       };
     </script>
 
     <style type="text/tailwindcss">
       div {
         /* border: 2px solid green; */
+      }
+      html {
+        scroll-behavior: smooth;
       }
       @font-face {
         font-family: "Cyborg Punk";
@@ -88,15 +92,15 @@
           <div
             class="relative flex flex-wrap items-start justify-between w-full mx-auto font-medium md:items-center md:h-24 md:justify-between"
           >
-            <a href="#_" class="flex items-center w-1/4 py-4 pl-6 pr-4 space-x-2 font-extrabold text-white md:py-0">
-              <span class="flex items-center justify-center flex-shrink-0 w-14 h-14 text-gray-900 rounded-full">
+            <a href="" class="flex items-center w-1/4 py-4 pl-6 pr-4 space-x-2 font-extrabold text-white md:py-0">
+              <span class="flex items-center justify-center flex-shrink-0 w-16 h-16 text-gray-900 rounded-full">
                 <img src="./img/logo/wittness-sm-dark.png" />
               </span>
-              <span>WITTNESS TECH</span>
+              <span> </span>
             </a>
             <div
               :class="{'flex': showMenu, 'hidden md:flex': !showMenu }"
-              class="absolute z-50 flex-col items-center justify-center w-full h-auto px-2 text-center text-gray-400 -translate-x-1/2 border-0 border-gray-700 rounded-full md:border md:w-auto md:h-10 left-1/2 md:flex-row md:items-center"
+              class="absolute z-50 flex-col items-center justify-center w-full h-auto px-2 text-center text-gray-400 -translate-x-1/2 border-0 border-gray-700 rounded-lg md:border md:w-auto md:h-10 left-1/2 md:flex-row md:items-center bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent bg-black bg-opacity-50 md:rounded-full select-none md:p-0 backdrop-blur-lg md:h-auto md:bg-transparent md:hover:shadow-md md:hover:shadow-gray-500 transition-all duration-500"
             >
               <a
                 href="#home"
@@ -152,27 +156,6 @@
               </a>
             </div>
             <div
-              class="fixed top-0 left-0 z-40 items-center hidden w-full h-full p-3 text-sm bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent md:p-0 md:relative md:flex"
-              :class="{'flex': showMenu, 'hidden': !showMenu }"
-            >
-              <div
-                class="flex-col items-center w-full h-full p-3 overflow-hidden bg-black bg-opacity-50 rounded-lg select-none md:p-0 backdrop-blur-lg md:h-auto md:bg-transparent md:rounded-none md:relative md:flex md:flex-row md:overflow-auto"
-              >
-                <div class="flex flex-col items-center justify-end w-full h-full pt-2 md:w-full md:flex-row md:py-0">
-                  <a
-                    href="#_"
-                    class="w-full py-5 mr-0 text-center text-gray-200 md:py-3 md:w-auto hover:text-white md:pl-0 md:mr-3 lg:mr-5"
-                    >Sign In</a
-                  >
-                  <a
-                    href="#_"
-                    class="inline-flex items-center justify-center w-full px-4 py-3 md:py-1.5 font-medium leading-6 text-center whitespace-no-wrap transition duration-150 ease-in-out border border-transparent md:mr-1 text-gray-600 md:w-auto bg-white rounded-lg md:rounded-full hover:bg-white focus:outline-none focus:border-gray-700 focus:shadow-outline-gray active:bg-gray-700"
-                    >Sign Up</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div
               @click="showMenu = !showMenu"
               class="absolute right-0 z-50 flex flex-col items-end translate-y-1.5 w-10 h-10 p-2 mr-4 rounded-full cursor-pointer md:hidden hover:bg-gray-200/10 hover:bg-opacity-10"
               :class="{ 'text-gray-400': showMenu, 'text-gray-100': !showMenu }"
@@ -212,17 +195,22 @@
             <span class="inline-block">Wittness</span>
             <span class="relative inline-block mt-3 text-white">Tech</span>
           </h1>
-          <p
-            class="mx-auto mt-6 text-sm text-left text-gray-200 md:text-center md:mt-12 sm:text-base md:max-w-xl md:text-lg xl:text-xl"
+
+          <div
+            class="mx-auto text-md text-center text-gray-200 md:text-center md:mt-12 sm:text-base md:max-w-xl md:text-lg xl:text-xl rounded-md px-4 py-2 font-bold leading-loose"
           >
-            <!-- <p class="p-4 text-base md:p-8 md:text-3xl bg-opacity-70 bg-black rounded-xl leading-relaxed"> -->
-            We’re witnessing the fastest technology transformation in modern history, businesses today can either
-            <span class="text-blue-500 font-bold text-xl">Catch up or Die!</span>
-            <br />
-            <br />
-            To bridge the technology gap that stands between you and a modern business, our software consultants can
-            help.
-          </p>
+            Delivering
+            <span class="font-serif text-blue-500 hover:text-white transition-all duration-1000">
+              Quality Software
+            </span>
+            for
+            <span class="text-lime-500 hover:text-white transition-all duration-1000"> Modern Businesses </span>
+          </div>
+          <div
+            class="mx-auto text-md text-center text-gray-200 md:text-center md:mt-12 sm:text-base md:max-w-5xl md:text-lg xl:text-xl rounded-md px-4 py-2 font-bold leading-loose"
+          >
+            Our Bespoke solutions can bridge the technology gap between you and a modern business.
+          </div>
         </div>
       </div>
     </section>
@@ -237,27 +225,24 @@
               <h1
                 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl"
               >
-                <span class="block xl:inline">When brothers become </span>
-                <span class="block text-blue-600 xl:inline" data-primary="blue-600">tech engineers </span>&
-                <span class="block text-blue-600 xl:inline" data-primary="blue-600">problem solvers.</span>
+                <span class="xl:inline">Our </span>
+                <span class="text-blue-600 xl:inline">engineers </span> &
+                <span class="text-green-600 xl:inline">problem solvers.</span>
               </h1>
               <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">
-                Wittness is proudly helping organisations in forming the technical stack tailored for their unique
+                Wittness is proudly helping organisations in establishing the technical stack tailored for their unique
                 business needs.
               </p>
               <div class="relative flex flex-col sm:flex-row sm:space-x-4">
                 <a
-                  href="#_"
+                  href=""
                   class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-blue-600 rounded-md sm:mb-0 hover:bg-blue-700 sm:w-auto"
-                  data-primary="blue-600"
-                  data-rounded="rounded-md"
                 >
                   Try It Free
                 </a>
                 <a
-                  href="#_"
+                  href=""
                   class="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600"
-                  data-rounded="rounded-md"
                 >
                   Learn More
                 </a>
@@ -265,11 +250,7 @@
             </div>
           </div>
           <div class="w-full md:w-1/2">
-            <div
-              class="w-full h-auto overflow-hidden rounded-md shadow-xl sm:rounded-xl"
-              data-rounded="rounded-xl"
-              data-rounded-max="rounded-full"
-            >
+            <div class="w-full h-auto overflow-hidden rounded-md shadow-xl sm:rounded-xl">
               <img src="./img/story.jpg" />
             </div>
           </div>
@@ -282,33 +263,31 @@
         <h1
           class="text-4xl font-extrabold tracking-tight text-left text-gray-900 sm:text-5xl md:text-6xl md:text-center"
         >
-          <span class="block"
-            >Our <span class="block mt-1 text-blue-500 lg:inline lg:mt-0" data-primary="blue-500">Mission</span></span
-          >
+          <span class="block">Our <span class="block mt-1 text-blue-500 lg:inline lg:mt-0">Mission</span></span>
         </h1>
-        <p
-          class="w-full mx-auto text-base text-left text-gray-500 md:max-w-md sm:text-lg lg:text-2xl md:max-w-3xl md:text-center"
+        <div
+          class="w-full mx-auto text-base text-left text-gray-500 md:max-w-7xl sm:text-lg lg:text-2xl md:max-w-3xl md:text-center"
         >
+          <!-- <div class="py-2"> -->
           <span class="font-bold text-blue-500">Technology</span>
           deployed with
-          <span class="font-bold text-red-500">compassion</span>
-          is invigorating for every outfit. It pleases us at Wittness when our elaborately created solutions fill the
-          unknown void for any business, and make our clients go "WoW"
-          <span class="font-bold text-green-500"> </span>.
-        </p>
+          <span class="font-bold text-green-500">compassion</span>
+          is invigorating for every outfit.
+          <!-- </div> -->
+          <br />
+          It pleases us at Wittness when our elaborately created solutions fill the technical voids and make our clients
+          go <span class="font-bold text-green-500">"WoW" </span>.
+        </div>
         <div class="relative flex flex-col justify-center md:flex-row md:space-x-4">
           <a
-            href="#_"
+            href=""
             class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-blue-500 rounded-md md:mb-0 hover:bg-blue-700 md:w-auto"
-            data-primary="blue-500"
-            data-rounded="rounded-md"
           >
             Try It Free
           </a>
           <a
-            href="#_"
+            href=""
             class="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600"
-            data-rounded="rounded-md"
           >
             Learn More
           </a>
@@ -320,7 +299,7 @@
     </section>
 
     <section id="process" class="flex items-center justify-center py-10 text-white bg-white sm:py-16 md:py-24 lg:py-32">
-      <div class="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
+      <div class="relative max-w-5xl px-10 text-center text-white auto lg:px-0">
         <div class="flex flex-col w-full md:flex-row">
           <!-- Top Text -->
           <div class="flex justify-between">
@@ -332,10 +311,7 @@
           </div>
           <!-- Right Image -->
           <div class="relative top-0 right-0 h-64 mt-12 md:-mt-16 md:absolute md:h-96">
-            <img
-              src="https://cdn.devdojo.com/images/december2020/designs3d.png"
-              class="object-cover mt-3 mr-5 h-80 lg:h-96"
-            />
+            <img src="./img/process/process_04.png" class="object-cover mt-3 mr-5 h-80 lg:h-96" />
           </div>
         </div>
 
@@ -345,10 +321,9 @@
         <!-- Bottom Text -->
         <h2 class="text-left text-gray-500 xl:text-xl">
           <p class="text-justify indent-8">
-            Before we even think about making any recommendations, we spend time talking to management and staff and
-            getting to know your business. We then look at the capabilities of your existing system and analyse your
-            business operations to determine where any efficiencies could be made and what, currently, stands in the way
-            of achieving this.
+            Before making any recommendations, we spend time talking to management and staff and getting to know your
+            business. We then analyse the capabilities of your existing system and business operations to determine
+            where any efficiencies could be made and what, currently, stands in the way of achieving this.
           </p>
         </h2>
       </div>
@@ -362,10 +337,7 @@
         <div
           class="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
         >
-          <img
-            src="https://cdn.devdojo.com/images/december2020/productivity.png"
-            class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20"
-          />
+          <img src="./img/process/process_01.png" class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20" />
         </div>
 
         <!-- Content -->
@@ -378,33 +350,25 @@
           </p>
           <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-              <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
-                data-primary="yellow-400"
+              <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 ><span class="text-sm font-bold">✓</span></span
               >
               Requirements analysis
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-              <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
-                data-primary="yellow-400"
+              <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 ><span class="text-sm font-bold">✓</span></span
               >
               Collaborative prototyping
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-              <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
-                data-primary="yellow-400"
+              <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 ><span class="text-sm font-bold">✓</span></span
               >
               Application structure
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-              <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
-                data-primary="yellow-400"
+              <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 ><span class="text-sm font-bold">✓</span></span
               >
               Technical specification
@@ -422,19 +386,19 @@
             Solution Analysis
           </h2>
           <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-10 lg:text-lg">
-            Save time and money with our revolutionary services. We are the leaders in the industry.
+            Save time and money with our revolutionary services. We are the leaders in innovation.
           </p>
           <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >Technical solution
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >
@@ -442,7 +406,7 @@
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >
@@ -456,7 +420,7 @@
         <div
           class="box-border relative w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2"
         >
-          <img src="https://cdn.devdojo.com/images/december2020/settings.png" class="pl-4 sm:pr-10 xl:pl-10 lg:pr-32" />
+          <img src="./img/process/process_02.png" class="pl-4 sm:pr-10 xl:pl-10 lg:pr-32" />
         </div>
       </div>
       <div
@@ -466,10 +430,7 @@
         <div
           class="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
         >
-          <img
-            src="https://cdn.devdojo.com/images/december2020/productivity.png"
-            class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20"
-          />
+          <img src="./img/process/process_03.png" class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20" />
         </div>
 
         <!-- Content -->
@@ -483,7 +444,7 @@
           <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >
@@ -491,7 +452,7 @@
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >
@@ -499,7 +460,7 @@
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >
@@ -507,7 +468,7 @@
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >Quality assurance
@@ -534,10 +495,7 @@
           </div>
           <!-- Right Image -->
           <div class="relative top-0 right-0 h-64 mt-12 md:-mt-16 md:absolute md:h-96">
-            <img
-              src="https://cdn.devdojo.com/images/december2020/designs3d.png"
-              class="object-cover mt-3 mr-5 h-80 lg:h-96"
-            />
+            <img src="./img/process/process_05.png" class="object-cover mt-3 mr-5 h-80 lg:h-96" />
           </div>
         </div>
 
@@ -548,10 +506,9 @@
         <h2 class="text-left text-gray-500 xl:text-xl">
           Our Consultants are highly experienced Technical Architects and Software Developers, meaning they recognise
           not only what is required from a business perspective, but also what is achievable from a technical
-          standpoint. They have many years of hands-on experience of guiding companies through technology change.
-          Advising on the best technology solution for your business, our Consultants are here to offer help and
-          guidance on how to overcome the huge challenges posed by the development of large-scale complex software
-          systems, such as:
+          standpoint. They have many years of hands-on experience of guiding companies. Advising on the best solution
+          for your business, we are here to offer help and guidance on how to overcome the challenges posed by the
+          development of large-scale complex software systems.
         </h2>
       </div>
     </section>
@@ -564,56 +521,47 @@
         <div
           class="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
         >
-          <img
-            src="https://cdn.devdojo.com/images/december2020/productivity.png"
-            class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20"
-          />
+          <img src="./img/logo/wittness-light.png" class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20" />
         </div>
 
         <!-- Content -->
         <div class="box-border order-first w-full text-black border-solid md:w-1/2 md:pl-10 md:order-none">
-          <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">XXX</h2>
-          <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">XXX</p>
+          <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+            Our Hallmark
+          </h2>
+          <p class="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg"></p>
           <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >
-              XXX
+              Timely Delivery
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >
-              Avoiding late software
+              Understanding Budget Constraints
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >
-              Delivery going over budget
+              Resolving Complexities in line with company goals
             </li>
             <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
               <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
+                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-lime-500 rounded-full"
                 data-primary="yellow-400"
                 ><span class="text-sm font-bold">✓</span></span
               >
-              Functionality resolving complexities/ sensitivities with the alignment of company goals
-            </li>
-            <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-              <span
-                class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"
-                data-primary="yellow-400"
-                ><span class="text-sm font-bold">✓</span></span
-              >
-              Integrating new and existing systems
+              Integrating new and legacy systems
             </li>
           </ul>
         </div>
@@ -627,11 +575,11 @@
           <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
             <div class="w-full lg:max-w-md">
               <h2 class="mb-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl font-heading">
-                Identifying software needs for business efficiency
+                Identifying software needs for Businesses
               </h2>
               <p class="mb-4 font-medium tracking-tight text-gray-400 xl:mb-6">
-                We have established numerous tech stacks for business use cases. Our team can consult with your business
-                for support as required. Our key services include Design & Deployment on the following :
+                We have established numerous tech stacks for typical and novel business use cases. Our key services
+                include Design & Deployment on the following :
               </p>
               <ul>
                 <li class="flex items-center py-2 space-x-4 xl:py-3">
@@ -649,7 +597,7 @@
                       d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
                     ></path>
                   </svg>
-                  <span class="font-medium text-gray-500">Web infrastructure </span>
+                  <span class="font-medium text-gray-500">Web Infrastructure </span>
                 </li>
                 <li class="flex items-center py-2 space-x-4 xl:py-3">
                   <svg
@@ -666,7 +614,7 @@
                       d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
                     ></path>
                   </svg>
-                  <span class="font-medium text-gray-500">Distributed Web based infrastructure </span>
+                  <span class="font-medium text-gray-500">Distributed Computing </span>
                 </li>
                 <li class="flex items-center py-2 space-x-4 xl:py-3">
                   <svg
@@ -683,7 +631,24 @@
                       d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                     ></path>
                   </svg>
-                  <span class="font-medium text-gray-500">On site solutions </span>
+                  <span class="font-medium text-gray-500">On-Site Solutions </span>
+                </li>
+                <li class="flex items-center py-2 space-x-4 xl:py-3">
+                  <svg
+                    class="w-8 h-8 text-yellow-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                    ></path>
+                  </svg>
+                  <span class="font-medium text-gray-500">Cloud Services </span>
                 </li>
                 <li class="flex items-center py-2 space-x-4 xl:py-3">
                   <svg
@@ -700,43 +665,7 @@
                       d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
                     ></path>
                   </svg>
-                  <span class="font-medium text-gray-500">Cloud services </span>
-                </li>
-                <li class="flex items-center py-2 space-x-4 xl:py-3">
-                  <svg
-                    class="w-8 h-8 text-yellow-500"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                    ></path>
-                  </svg>
-                  <span class="font-medium text-gray-500"
-                    >Windows and Linux based stand-alone business Applications
-                  </span>
-                </li>
-                <li class="flex items-center py-2 space-x-4 xl:py-3">
-                  <svg
-                    class="w-8 h-8 text-green-500"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                    ></path>
-                  </svg>
-                  <span class="font-medium text-gray-500">Setting up network infrastructure </span>
+                  <span class="font-medium text-gray-500">Windows and Linux based Apps </span>
                 </li>
               </ul>
             </div>
@@ -755,27 +684,26 @@
     <section id="caseStudies" class="relative w-full bg-white">
       <div class="absolute w-full h-32 bg-gradient-to-b from-gray-100 to-white"></div>
       <div class="relative w-full px-1 py-10 mx-auto sm:py-12 md:py-16 md:px-10 max-w-7xl">
-        <h1 class="mb-1 text-4xl font-extrabold leading-none text-gray-900 lg:text-5xl xl:text-6xl sm:mb-3">
-          <a href="#_">The Project Blog</a>
+        <h1 class="mb-1 text-4xl font-extrabold leading-none text-gray-900 lg:text-5xl xl:text-6xl sm:mb-3 text-center">
+          <a href=""> Projects</a>
         </h1>
-        <p class="text-lg font-medium text-gray-500 sm:text-2xl">Designs and layouts to help you with your app.</p>
         <div class="flex flex-col md:flex-row h-full gap-2 pb-10 mt-8 sm:mt-16">
           <div
             class="relative w-full flex flex-col items-start group justify-around h-full overflow-hidden rounded-xl group"
           >
             <a
-              href="#_"
-              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 group-hover:scale-110"
-              style="background-image: url('https://cdn.devdojo.com/images/may2021/quench-satisfying.jpg')"
+              href=""
+              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 group-hover:scale-110 bg-red-200"
+              style="background-image: url('./img/projects/fleet.png')"
             >
             </a>
-            <div class="relative z-20 w-full h-full py-8 text-white bg-blue-500 border-t-0 border-yellow-200 px-7">
+            <div class="relative z-20 w-full h-full py-8 text-white bg-red-700 border-t-0 border-yellow-200 px-7">
               <a
-                href="#_"
-                class="inline-block text-xs font-semibold absolute top-0 -mt-3.5 rounded-full px-4 py-2 uppercase text-blue-500 bg-white"
+                href=""
+                class="inline-block text-xs font-semibold absolute top-0 -mt-3.5 rounded-full px-4 py-2 uppercase text-red-800 bg-white border-2 border-red-700"
                 >Real Time</a
               >
-              <h2 class="mb-5 text-3xl md:text-5xl font-bold"><a href="#_"> Digital Fleet Management </a></h2>
+              <h2 class="mb-5 text-3xl md:text-5xl font-bold"><a href=""> Fleet Management </a></h2>
               <p class="mb-2 text-lg font-normal text-blue-100 opacity-100">
                 Logistics operations are time critical and need a lookout to identify possible points of failure. We
                 provide continuous monitoring of all elements involved in tranport and delivery cycles.
@@ -785,18 +713,18 @@
 
           <div class="relative w-full flex flex-col items-start justify-around h-full overflow-hidden rounded-xl group">
             <a
-              href="#_"
-              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 group-hover:scale-110"
-              style="background-image: url('https://cdn.devdojo.com/images/may2021/orange.jpg')"
+              href=""
+              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 group-hover:scale-110 bg-blue-300"
+              style="background-image: url('./img/projects/restaurant.png')"
             >
             </a>
-            <div class="relative z-20 w-full h-auto py-8 text-white bg-blue-400 border-t-0 border-yellow-200 px-7">
+            <div class="relative z-20 w-full h-auto py-8 text-white bg-blue-600 border-t-0 border-yellow-200 px-7">
               <a
-                href="#_"
-                class="inline-block text-xs font-semibold absolute top-0 -mt-3.5 rounded-full px-4 py-2 uppercase text-blue-500 bg-white"
+                href=""
+                class="inline-block text-xs font-semibold absolute top-0 -mt-3.5 rounded-full px-4 py-2 uppercase text-blue-800 bg-white border-2 border-blue-600"
                 >Lifestyle</a
               >
-              <h2 class="mb-5 text-3xl md:text-5xl font-bold"><a href="#_">Restaurant Management</a></h2>
+              <h2 class="mb-5 text-3xl md:text-5xl font-bold"><a href="">Restaurant Management</a></h2>
               <p class="mb-2 text-lg font-normal text-blue-100 opacity-100">
                 Restoronta give you flexibility to run your restaurant business with minimum fuss. Staff management,
                 reporting and administration are built-in. Products and kitchen provide intuitive workflow.
@@ -806,19 +734,19 @@
 
           <div class="relative w-full flex flex-col items-start justify-around h-full overflow-hidden rounded-xl group">
             <a
-              href="#_"
-              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 group-hover:scale-110"
-              style="background-image: url('https://cdn.devdojo.com/images/may2021/gbc.jpg')"
+              href=""
+              class="block w-full transition duration-300 ease-in-out transform bg-center bg-cover h-96 group-hover:scale-110 bg-green-300"
+              style="background-image: url('./img/projects/school.png')"
             ></a>
             <div
-              class="relative z-20 flex flex-col items-start justify-center w-full h-auto py-8 text-white bg-yellow-400 border-t-0 border-yellow-200 sm:h-full xl:h-full px-7"
+              class="relative z-20 flex flex-col items-start justify-center w-full h-auto py-8 text-white bg-green-700 border-t-0 border-yellow-200 sm:h-full xl:h-full px-7"
             >
               <a
-                href="#_"
-                class="inline-block text-xs font-semibold absolute sm:mb-5 xl:mb-0 sm:relative xl:absolute top-0 -mt-3.5 rounded-full px-4 py-2 uppercase text-yellow-400 bg-white"
+                href=""
+                class="inline-block text-xs font-semibold absolute sm:mb-5 xl:mb-0 sm:relative xl:absolute top-0 -mt-3.5 rounded-full px-4 py-2 uppercase text-green-900 bg-white border-2 border-green-700"
                 >Education</a
               >
-              <h2 class="mb-5 text-3xl md:text-5xl font-bold"><a href="#_">Open School Initiative</a></h2>
+              <h2 class="mb-5 text-3xl md:text-5xl font-bold"><a href="">Open School Initiative</a></h2>
               <p class="mb-2 text-lg font-normal opacity-100 text-yellow-50">
                 Open school architecture with distributed learning resources. Made for both teachers and students. Share
                 your knowledge base and help achieve better education standards.
@@ -833,7 +761,7 @@
       <div class="max-w-6xl px-12 mx-auto text-center">
         <div class="space-y-12 md:text-center">
           <div class="max-w-3xl mb-20 space-y-5 sm:mx-auto sm:space-y-4">
-            <h2 class="relative text-4xl font-extrabold tracking-tight sm:text-5xl">Our Awesome Team</h2>
+            <h2 class="relative text-4xl font-extrabold tracking-tight sm:text-5xl">Our Humble Team</h2>
             <p class="text-xl text-gray-500">
               We take pride in the people we work with. This is because we all collectively help each other become more
               awesome every day.
@@ -852,7 +780,7 @@
 
             <div class="flex border-t border-gray-200 divide-x divide-gray-200">
               <a
-                href="#_"
+                href=""
                 class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
@@ -872,7 +800,7 @@
                 </svg>
               </a>
               <a
-                href="#_"
+                href=""
                 class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
@@ -887,14 +815,14 @@
           <div class="w-full border border-gray-200 rounded-lg shadow-sm">
             <div class="flex flex-col items-center justify-center p-10">
               <img class="w-32 h-32 mb-6 rounded-full" src="https://github.com/thenewadeel.png" />
-              <h2 class="text-lg font-medium">Muhammad Adeel Shahid</h2>
+              <h2 class="text-lg font-medium">Ad</h2>
               <p class="font-medium text-blue-500">Design Advisor and Co-Founder</p>
               <p class="text-gray-400">Team member as of 2015</p>
             </div>
 
             <div class="flex border-t border-gray-200 divide-x divide-gray-200">
               <a
-                href="#_"
+                href=""
                 class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
@@ -914,49 +842,7 @@
                 </svg>
               </a>
               <a
-                href="#_"
-                class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="w-full border border-gray-200 rounded-lg shadow-sm">
-            <div class="flex flex-col items-center justify-center p-10">
-              <img class="w-32 h-32 mb-6 rounded-full" src="https://cdn.devdojo.com/images/june2021/headshot-n.jpg" />
-              <h2 class="text-lg font-medium">Fred Clemens</h2>
-              <p class="font-medium text-blue-500">Marketing Manager</p>
-              <p class="text-gray-400">Team member as of 2016</p>
-            </div>
-
-            <div class="flex border-t border-gray-200 divide-x divide-gray-200">
-              <a
-                href="#_"
-                class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#_"
-                class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#_"
+                href=""
                 class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
@@ -981,7 +867,7 @@
 
             <div class="flex border-t border-gray-200 divide-x divide-gray-200">
               <a
-                href="#_"
+                href=""
                 class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
@@ -991,7 +877,7 @@
                 </svg>
               </a>
               <a
-                href="#_"
+                href=""
                 class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
@@ -1001,94 +887,7 @@
                 </svg>
               </a>
               <a
-                href="#_"
-                class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="w-full border border-gray-200 rounded-lg shadow-sm">
-            <div class="flex flex-col items-center justify-center p-10">
-              <img
-                class="w-32 h-32 mb-6 rounded-full"
-                src="https://cdn.devdojo.com/images/june2021/headshot-female.jpg"
-              />
-              <h2 class="text-lg font-medium">Kelly Rogers</h2>
-              <p class="font-medium text-blue-500">Designer</p>
-              <p class="text-gray-400">Team member as of 2018</p>
-            </div>
-
-            <div class="flex border-t border-gray-200 divide-x divide-gray-200">
-              <a
-                href="#_"
-                class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#_"
-                class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#_"
-                class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="w-full border border-gray-200 rounded-lg shadow-sm">
-            <div class="flex flex-col items-center justify-center p-10">
-              <img class="w-32 h-32 mb-6 rounded-full" src="https://cdn.devdojo.com/images/june2021/headshotf2.jpg" />
-              <h2 class="text-lg font-medium">Sarah Neilson</h2>
-              <p class="font-medium text-blue-500">Designer</p>
-              <p class="text-gray-400">Team member as of 2018</p>
-            </div>
-
-            <div class="flex border-t border-gray-200 divide-x divide-gray-200">
-              <a
-                href="#_"
-                class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#_"
-                class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#_"
+                href=""
                 class="flex-1 block p-5 text-center text-gray-300 transition duration-200 ease-out hover:bg-gray-100 hover:text-gray-500"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto fill-current" viewBox="0 0 24 24">
@@ -1106,7 +905,7 @@
     <section id="contact" class="w-full bg-white">
       <div class="mx-auto max-w-7xl">
         <div class="flex flex-col lg:flex-row">
-          <div class="relative w-full bg-cover lg:w-6/12 xl:w-7/12 bg-gradient-to-r from-white via-white to-gray-100">
+          <div class="relative w-full bg-cover lg:w-4/12 xl:w-4/12 bg-gradient-to-r from-white via-white to-gray-100">
             <div class="relative flex flex-col items-center justify-center w-full h-full px-10 my-20 lg:px-16 lg:my-0">
               <div class="flex flex-col items-start space-y-8 tracking-tight lg:max-w-3xl">
                 <div class="relative">
@@ -1114,10 +913,10 @@
                   <h2 class="text-5xl font-bold text-gray-900 xl:text-6xl">Work smarter</h2>
                 </div>
                 <p class="text-2xl text-gray-700">
-                  We create simple solutions to gain more out of your business and your application.
+                  Are you looking for simple solutions to gain more out of your business?
                 </p>
                 <!-- <a
-                  href="#_"
+                  href=""
                   class="inline-block px-8 py-5 text-xl font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease"
                   data-primary="blue-600"
                   data-rounded="rounded-lg"
@@ -1127,12 +926,12 @@
             </div>
           </div>
 
-          <div class="w-full bg-white lg:w-6/12 xl:w-5/12">
+          <div class="w-full bg-white lg:w-8/12 xl:w-8/12">
             <div class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
               <h4 class="w-full text-3xl font-bold">Connect</h4>
               <p class="text-lg text-gray-500 my-4 leading-relaxed">
                 Are you looking for a bespoke software solution for your business?
-                <!-- <a href="#_" class="text-blue-600 underline" data-primary="blue-600">sign in</a> -->
+                <!-- <a href="" class="text-blue-600 underline" data-primary="blue-600">sign in</a> -->
               </p>
               <div class="relative w-full mt-10 space-y-8">
                 <div class="relative">
@@ -1158,46 +957,35 @@
                 <div class="relative flex flex-row items-start justify-around">
                   <label class="font-medium text-gray-900">Your Role :</label>
                   <div class="flex flex-col self-end align-right text-right">
-                    <div>
-                      <input type="checkbox" name="owner" id="" />
-                      Business Owner
+                    <div class="flex flex-row items-center">
+                      <input type="checkbox" name="owner" id="" class="text-lime-700" />
+                      <label class="font-medium text-gray-900 px-4">Business Owner</label>
                     </div>
-                    <div class="flex row px-4 align-middle items-center">
-                      <input type="checkbox" name="manager" id="" />
-                      Manager
+                    <div class="flex flex-row items-center">
+                      <input type="checkbox" name="manager" id="" class="text-lime-700" />
+                      <label class="font-medium text-gray-900 px-4">Manager</label>
                     </div>
-                    <div class="flex row px-4 align-middle items-center">
-                      <input type="checkbox" name="techLead" id="" />
-                      Tech Lead
+                    <div class="flex flex-row items-center">
+                      <input type="checkbox" name="techLead" id="" class="text-lime-700" />
+                      <label class="font-medium text-gray-900 px-4">Tech Lead</label>
                     </div>
-                    <div class="flex row px-4 align-middle items-center">
-                      <input type="checkbox" name="student" id="" />
-                      Student
+                    <div class="flex flex-row items-center">
+                      <input type="checkbox" name="student" id="" class="text-lime-700" />
+                      <label class="font-medium text-gray-900 px-4">Student</label>
                     </div>
                   </div>
-                  <!-- <input
-                    type="password"
-                    class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50"
-                    data-primary="blue-600"
-                    data-rounded="rounded-lg"
-                    placeholder="Password"
-                    /> -->
                 </div>
                 <div class="relative">
                   <label class="font-medium text-gray-900">Your Message:</label>
                   <textarea
                     class="block w-full px-4 py-4 mt-2 text-xl placeholder-gray-400 bg-gray-200 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50"
-                    data-primary="blue-600"
-                    data-rounded="rounded-lg"
                     placeholder="Message"
                   ></textarea>
                 </div>
                 <div class="relative">
                   <a
-                    href="#_"
+                    href=""
                     class="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease"
-                    data-primary="blue-600"
-                    data-rounded="rounded-lg"
                     >Submit</a
                   >
                 </div>
@@ -1211,13 +999,15 @@
     <section class="text-gray-700 bg-white body-font">
       <div class="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row">
         <a href="#/" class="text-xl font-black leading-none text-gray-900 select-none logo"
-          >Wittness Tech<span class="text-blue-600">.</span></a
-        >
+          >Wittness
+          <span class="text-lime-600">.</span>
+          Tech
+        </a>
         <p class="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0">
           &copy; 2021 Wittness Tech
         </p>
         <span class="inline-flex justify-center pl-8 mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
-          <a href="facebook.com/wittnesstech" class="text-gray-400 hover:text-gray-500">
+          <a href="https://facebook.com/wittnesstech" class="text-gray-400 hover:text-gray-500">
             <span class="sr-only">Facebook</span>
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -1228,7 +1018,7 @@
             </svg>
           </a>
 
-          <a href="instagram.com/wittnesstech" class="text-gray-400 hover:text-gray-500">
+          <a href="https://instagram.com/wittnesstech" class="text-gray-400 hover:text-gray-500">
             <span class="sr-only">Instagram</span>
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -1239,7 +1029,7 @@
             </svg>
           </a>
 
-          <a href="x.com/wittnesstech" class="text-gray-400 hover:text-gray-500">
+          <a href="https://x.com/wittnesstech" class="text-gray-400 hover:text-gray-500">
             <span class="sr-only">Twitter</span>
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -1248,7 +1038,7 @@
             </svg>
           </a>
 
-          <a href="github.com/wittnesstech" class="text-gray-400 hover:text-gray-500">
+          <a href="https://github.com/wittnesstech" class="text-gray-400 hover:text-gray-500">
             <span class="sr-only">GitHub</span>
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
@@ -1261,6 +1051,53 @@
         </span>
       </div>
     </section>
+
+    <div
+      x-data="{
+      bannerVisible: false,
+      bannerVisibleAfter: 300,
+  }"
+      x-show="bannerVisible"
+      x-transition:enter="transition ease-out duration-500"
+      x-transition:enter-start="-translate-y-10"
+      x-transition:enter-end="translate-y-0"
+      x-transition:leave="transition ease-in duration-300"
+      x-transition:leave-start="translate-y-0"
+      x-transition:leave-end="-translate-y-10"
+      class="fixed top-0 left-0 w-full h-auto py-2 duration-300 ease-out bg-white shadow-sm sm:py-0 sm:h-10"
+      x-cloak
+    >
+      <!-- x-init="setTimeout(()=>{ bannerVisible = true }, bannerVisibleAfter);" -->
+      <div class="flex items-center justify-between w-full h-full px-3 mx-auto max-w-7xl">
+        <a
+          href="#"
+          class="flex flex-col w-full h-full text-xs leading-6 text-black duration-150 ease-out sm:flex-row sm:items-center opacity-80 hover:opacity-100"
+        >
+          <span class="flex items-center">
+            <strong class="font-semibold">New Feature</strong
+            ><span class="hidden w-px h-4 mx-3 rounded-full sm:block bg-neutral-200"></span>
+          </span>
+          <span class="block pt-1 pb-2 leading-none sm:inline sm:pt-0 sm:pb-0"
+            >Click here to learn about our latest feature</span
+          >
+        </a>
+        <button
+          @click="bannerVisible=false; setTimeout(()=>{ bannerVisible = true }, 1000);"
+          class="flex items-center flex-shrink-0 translate-x-1 ease-out duration-150 justify-center w-6 h-6 p-1.5 text-black rounded-full hover:bg-neutral-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-full h-full"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
 
     <button
       :class="show_backToTop ? 'block' : 'hidden'"
