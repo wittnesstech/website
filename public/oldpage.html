@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/alpine.js"></script>
+    <script src="./js/tailwind.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <!-- <link rel="stylesheet" href="./css/tailwind.min.css" /> -->
+    <link rel="stylesheet" href="./css/aos.css" />
+    <title>Wittness Tech</title>
+  </head>
+  <body
+    class="w-screen flex flex-col justify-center bg-gray text-black text-lg"
+    x-data="{ showBar: false }"
+  >
+    <div
+      class="bg-green-600 visible md:invisible w-screen z-20"
+      x-data="{showMenu : false}"
+    >
+      <button
+        @click.prevent="showMenu = !showMenu "
+        class="px-2 py-2 flex justify-between bg-green-600 text-white"
+      >
+        <svg
+          x-show="!showMenu"
+          class="w-6 h-6 mr-2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          x-show="showMenu"
+          class="w-6 h-6 mr-2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+        Menu
+      </button>
+      <div x-show="showMenu">
+        <!-- <button
+          @click.prevent="showMenu = !showMenu "
+          class="
+            px-2
+            py-2
+            font-bold
+            flex
+            justify-between
+            text-blue-900
+            w-full
+            border-b border-blue-900
+            bg-white
+          "
+        >
+          Menu
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button> -->
+        <nav class="flex flex-col">
+          <a
+            href="#aboutUs"
+            class="
+              p-2
+              text-green-600
+              font-bold
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-white hover:bg-green-600
+            "
+          >
+            About Us
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#services"
+            class="
+              p-2
+              text-green-600
+              font-bold
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-white hover:bg-green-600
+            "
+          >
+            Services
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#process"
+            class="
+              p-2
+              text-green-600
+              font-bold
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-white hover:bg-green-600
+            "
+          >
+            Process
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#caseStudies"
+            class="
+              p-2
+              text-green-600
+              font-bold
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-white hover:bg-green-600
+            "
+          >
+            Case Studies
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a
+            href="#contact"
+            class="
+              p-2
+              text-green-600
+              font-bold
+              bg-white
+              flex
+              justify-between
+              w-full
+              border-b border-blue-900
+              hover:text-white hover:bg-green-600
+            "
+          >
+            Contact us
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </div>
+    <!-- .bg-blue-500 -->
+    <nav
+      :class="{ 'bg-white rounded-b-full bg-opacity-80 hover:bg-opacity-100 border-b-8 border-green-600 shadow transition duration-1000  shadow-xl' : showBar }"
+      @scroll.window="showBar = (window.pageYOffset > 20) ? true : false"
+      class="
+        z-20
+        invisible
+        md:visible
+        w-screen
+        py-2
+        text-center
+        fixed
+        top-0
+        bg-gray-200
+        transition-all
+        duration-1000
+        flex
+        items-center
+        justify-center
+        text-gray-800 text-xs
+        font-bold
+        text-xl
+        uppercase
+        shadow-md
+        hover:shadow-lg hover:text-gray-900
+      "
+    >
+      <div class="flex flex-row w-1/6 pl-8">
+        <svg
+          width="64"
+          height="64"
+          viewBox="0 0 16.933333 16.933334"
+          version="1.1"
+          id="svg1114"
+          inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+          sodipodi:docname="wittness1.svg"
+          xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+          xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:svg="http://www.w3.org/2000/svg"
+        >
+          <defs id="defs1111" />
+          <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+            <g
+              id="g7455"
+              transform="matrix(0.38886891,0,0,0.33252078,2.5922963,6.6588457)"
+            >
+              <path
+                id="path3373"
+                style="
+                  font-variation-settings: normal;
+                  fill: #ff0000;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.944175;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 12.6;
+                  stroke-dasharray: none;
+                  stroke-dashoffset: 0;
+                  stroke-opacity: 0.996059;
+                  paint-order: normal;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="-4.3811044e-06"
+                inkscape:transform-center-y="-7.5409504"
+                d="m 15.10656,-17.037008 c -2.38895,13.363909 -4.77798,26.727804 -7.16752,40.091609 1.22654,-4.287488 3.81653,-8.246541 7.1856,-11.078392 3.35487,2.900669 5.92499,6.783162 7.14892,11.074259 -2.38888,-13.362514 -4.77793,-26.724997 -7.167,-40.087476 z"
+                sodipodi:nodetypes="ccccc"
+              />
+              <path
+                id="path2954"
+                style="
+                  fill: #ffffff44;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.944175;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 11;
+                  stroke-dasharray: none;
+                  stroke-opacity: 0.996059;
+                  paint-order: fill markers stroke;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="1.270063e-05"
+                inkscape:transform-center-y="19.399231"
+                d="m 28.76599,11.98086 c -0.26192,-0.768957 -0.55795,-1.519733 -0.88677,-2.248958 -0.88326,4.11362 -1.76643,8.227171 -2.64945,12.340846 -0.40928,2.200228 -1.70075,6.780581 -1.70075,6.780581 0,0 -1.2913,-4.58006 -1.70062,-6.780616 C 20.94537,17.95904 20.0622,13.845481 19.17894,9.731867 l -0.85782,2.172475 C 18.10713,9.779439 17.6569,7.680438 16.97081,5.665964 16.84233,5.155353 16.59031,4.674235 16.39203,4.183366 l 0.91106,-4.242117 c 8.33957,-2.347036 14.49004,-9.893025 16.23006,-11.923092 z"
+                sodipodi:nodetypes="cccccccccccc"
+              />
+              <path
+                id="path7338"
+                style="
+                  fill: #ffffff44;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.944175;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 11;
+                  stroke-dasharray: none;
+                  stroke-opacity: 0.996059;
+                  paint-order: fill markers stroke;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="-1.0612715e-05"
+                inkscape:transform-center-y="19.399231"
+                d="m 1.44661,11.98086 c 0.26192,-0.768957 0.55795,-1.519733 0.88677,-2.248958 0.88326,4.11362 1.76643,8.227171 2.64945,12.340846 0.40928,2.200228 1.70075,6.780581 1.70075,6.780581 0,0 1.2913,-4.58006 1.70062,-6.780616 0.88303,-4.113673 1.7662,-8.227232 2.64946,-12.340846 l 0.85782,2.172475 C 12.10547,9.779439 12.5557,7.680438 13.24179,5.665964 13.37027,5.155353 13.62229,4.674235 13.82057,4.183366 L 12.90951,-0.058751 C 4.56994,-2.405787 -1.58053,-9.951776 -3.32055,-11.981843 Z"
+                sodipodi:nodetypes="cccccccccccc"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="flex flex-row w-4\/6">
+        <ul class="flex row pl-6">
+          <li class="pr-6 hover:text-green-600">
+            <a href="#aboutUs"> About Us </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#services"> Services </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#process"> Process </a>
+          </li>
+          <!-- <li class="pr-6 hover:text-green-600">
+            <a href="#industries"> Industries </a>
+          </li> -->
+          <li class="pr-6 hover:text-green-600">
+            <a href="#caseStudies"> Case Studies </a>
+          </li>
+          <li class="pr-6 hover:text-green-600">
+            <a href="#contact"> Contact Us </a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-row w-1/6"></div>
+    </nav>
+    <!-- Hero Section -->
+    <div
+      class="
+        md:p-20 md:pt-40
+        shadow-inner
+        h-screen
+        text-white text-center
+        flex flex-col
+        justify-evenly
+        bg-[url('./img/bg2.jpg')]
+        object-cover
+        bg-fixed bg-cover
+      "
+    >
+      <h1
+        class="
+          flex flex-col
+          items-center
+          md:p-8
+          text-3xl
+          overflow-visible
+          md:text-9xl
+          font-extrabold
+          text-green-500 text-center
+          bg-opacity-70 bg-black
+          w-max
+          self-center
+          rounded-3xl
+          p-4
+          font-serif
+          md:hover:text-red-500 md:hover:shadow-2xl
+          transition-all
+          duration-1000
+        "
+      >
+        <svg
+          class="md:hidden self-center"
+          width="128"
+          height="128"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:svg="http://www.w3.org/2000/svg"
+        >
+          <defs id="defs1111" />
+          <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+            <g
+              id="g7455"
+              transform="matrix(0.38886891,0,0,0.33252078,2.5922963,6.6588457)"
+            >
+              <path
+                id="path3373"
+                style="
+                  font-variation-settings: normal;
+                  fill: #ff0000;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: #000000;
+                  stroke-width: 0.944175;
+                  stroke-linecap: butt;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 12.6;
+                  stroke-dasharray: none;
+                  stroke-dashoffset: 0;
+                  stroke-opacity: 0.996059;
+                  paint-order: normal;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="-4.3811044e-06"
+                inkscape:transform-center-y="-7.5409504"
+                d="m 15.10656,-17.037008 c -2.38895,13.363909 -4.77798,26.727804 -7.16752,40.091609 1.22654,-4.287488 3.81653,-8.246541 7.1856,-11.078392 3.35487,2.900669 5.92499,6.783162 7.14892,11.074259 -2.38888,-13.362514 -4.77793,-26.724997 -7.167,-40.087476 z"
+                sodipodi:nodetypes="ccccc"
+              />
+              <path
+                id="path2954"
+                style="
+                  fill: #ffffff44;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: gray;
+                  stroke-width: 0.944175;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 11;
+                  stroke-dasharray: none;
+                  stroke-opacity: 0.996059;
+                  paint-order: fill markers stroke;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="1.270063e-05"
+                inkscape:transform-center-y="19.399231"
+                d="m 28.76599,11.98086 c -0.26192,-0.768957 -0.55795,-1.519733 -0.88677,-2.248958 -0.88326,4.11362 -1.76643,8.227171 -2.64945,12.340846 -0.40928,2.200228 -1.70075,6.780581 -1.70075,6.780581 0,0 -1.2913,-4.58006 -1.70062,-6.780616 C 20.94537,17.95904 20.0622,13.845481 19.17894,9.731867 l -0.85782,2.172475 C 18.10713,9.779439 17.6569,7.680438 16.97081,5.665964 16.84233,5.155353 16.59031,4.674235 16.39203,4.183366 l 0.91106,-4.242117 c 8.33957,-2.347036 14.49004,-9.893025 16.23006,-11.923092 z"
+                sodipodi:nodetypes="cccccccccccc"
+              />
+              <path
+                id="path7338"
+                style="
+                  fill: #ffffff44;
+                  fill-opacity: 1;
+                  fill-rule: evenodd;
+                  stroke: gray;
+                  stroke-width: 0.944175;
+                  stroke-linejoin: miter;
+                  stroke-miterlimit: 11;
+                  stroke-dasharray: none;
+                  stroke-opacity: 0.996059;
+                  paint-order: fill markers stroke;
+                  stop-color: #000000;
+                "
+                inkscape:transform-center-x="-1.0612715e-05"
+                inkscape:transform-center-y="19.399231"
+                d="m 1.44661,11.98086 c 0.26192,-0.768957 0.55795,-1.519733 0.88677,-2.248958 0.88326,4.11362 1.76643,8.227171 2.64945,12.340846 0.40928,2.200228 1.70075,6.780581 1.70075,6.780581 0,0 1.2913,-4.58006 1.70062,-6.780616 0.88303,-4.113673 1.7662,-8.227232 2.64946,-12.340846 l 0.85782,2.172475 C 12.10547,9.779439 12.5557,7.680438 13.24179,5.665964 13.37027,5.155353 13.62229,4.674235 13.82057,4.183366 L 12.90951,-0.058751 C 4.56994,-2.405787 -1.58053,-9.951776 -3.32055,-11.981843 Z"
+                sodipodi:nodetypes="cccccccccccc"
+              />
+            </g>
+          </g>
+        </svg>
+        Wittness Tech
+      </h1>
+      <!-- <h2 class="pt-8 text-4xl">Software Consultancy</h2> -->
+      <p
+        class="
+          p-4
+          text-base
+          md:p-8 md:text-3xl
+          bg-opacity-70 bg-black
+          rounded-xl
+          leading-relaxed
+        "
+      >
+        We’re witnessing the fastest technology transformation in modern
+        history, businesses today can either
+        <span class="text-red-500 font-bold">Catch up or Die!</span>
+        <br />
+        <br />
+        To bridge the technology gap that stands between you and a modern
+        business, our software consultants can help.
+      </p>
+    </div>
+    <!-- About Us Section -->
+    <div id="aboutUs">
+      <!-- STORY PAGE -->
+      <div
+        class="
+          h-screen
+          md:pt-36 md:p-20
+          flex flex-col
+          md:flex-row
+          bg-gradient-to-b
+          from-sky-50
+          to-sky-200
+        "
+        data-aos="zoom-in-up"
+      >
+        <div
+          class="
+            flex flex-col
+            rounded-2xl
+            w-full
+            h-full
+            hover:shadow-xl hover:border-opacity-60
+            border-green-600 border-4 border-opacity-0
+            transition-all
+          "
+        >
+          <div class="text-center text-4xl p-2 pb-8 font-black underline">
+            Our Story
+          </div>
+          <!-- <div class="flex row"> -->
+          <div class="flex w-full h-full p-2 relative md:grid grid-cols-2">
+            <img
+              src="img/story.jpg"
+              alt=""
+              class="
+                rounded-lg
+                hover:shadow-xl
+                transition-all
+                bg-cover
+                w-full
+                h-full
+              "
+            />
+            <div
+              class="
+                text-ellipsis
+                w-full
+                h-full
+                p-4
+                text-justify text-base text-white
+                absolute
+                bg-opacity-80 bg-black
+                md:bg-opacity-0 md:relative md:text-black
+                inset-0
+                rounded-2xl
+                md:relative md:text-black
+                text-center
+                leading-4
+                inset-x-0
+                md:text-2xl
+                flex
+                items-center
+                indent-6
+                md:indent-16
+              "
+            >
+              Wittness was born when two brothers of a suburban town of Pakistan
+              recognised their interest in computers. Their thirst for knowledge
+              and curiosity made them tech engineers and problem solvers.
+              <br />Gaining fulfillment by extending help, they set out to help
+              surrounding individuals and organisations. <br />Today Wittness is
+              proudly helping organisations in forming the technical stack
+              tailored for their unique business needs.
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+      <!-- MISSION PAGE -->
+      <div
+        class="
+          h-screen
+          md:pt-36
+          bg-sky-200
+          md:p-20
+          flex flex-col
+          md:flex-row
+          bg-gradient-to-b
+          from-sky-200
+          to-green-200
+        "
+      >
+        <div
+          class="
+            flex flex-col
+            rounded-2xl
+            w-full
+            h-full
+            hover:shadow-xl hover:border-opacity-60
+            border-green-600 border-4 border-opacity-0
+            transition-all
+          "
+          data-aos="zoom-in-up"
+        >
+          <div class="text-center text-4xl p-2 pb-8 font-black underline">
+            Our Mission
+          </div>
+          <div class="flex w-full h-full p-2 relative md:grid grid-cols-2">
+            <img
+              src="img/mission.jpg"
+              alt=""
+              class="
+                rounded-lg
+                hover:shadow-xl
+                transition-all
+                bg-cover
+                w-full
+                h-full
+              "
+            />
+            <div
+              class="
+                text-ellipsis
+                w-full
+                h-full
+                p-4
+                text-justify text-base text-white
+                absolute
+                bg-opacity-80 bg-black
+                md:bg-opacity-0 md:relative md:text-black
+                inset-0
+                rounded-2xl
+                text-center
+                leading-4
+                md:text-2xl
+                flex
+                items-center
+                indent-6
+                md:indent-16
+              "
+            >
+              <div class="">
+                <span class="md:text-2xl font-bold text-blue-500"
+                  >Technology</span
+                >
+                deployed with
+                <span class="md:text-2xl font-bold text-red-500"
+                  >compassion</span
+                >
+                is invigorating for every outfit. It pleases us at Wittness when
+                our elaborately created solutions fill the unknown void for any
+                business, and make our clients go
+                <span class="md:text-2xl font-bold text-green-500">"Wow"</span>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- TEAM PAGE -->
+      <div
+        class="
+          h-full
+          md:pt-36
+          bg-sky-100
+          md:p-20
+          flex flex-col
+          md:flex-row
+          bg-gradient-to-b
+          from-green-200
+          to-sky-50
+        "
+      >
+        <div
+          class="
+            flex flex-col
+            rounded-2xl
+            w-full
+            h-auto
+            hover:shadow-xl hover:border-opacity-60
+            border-green-600 border-4 border-opacity-0
+            transition-all
+          "
+          data-aos="zoom-in-up"
+        >
+          <div class="text-center text-4xl p-2 pb-8 font-black underline">
+            Our Team
+          </div>
+          <div class="flex flex-col md:flex-row justify-around items-center">
+            <!-- CEO -->
+            <div
+              class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg"
+              data-aos="zoom-in-left"
+            >
+              <img
+                src="https://github.com/usman092.png"
+                alt=""
+                class="
+                  w-48
+                  self-center
+                  rounded-full
+                  border-4 border-white
+                  hover:border-green-500 hover:shadow-xl
+                  transition-all
+                "
+              />
+              <div class="text-center rounded-md">Muhammad Usman Shahid</div>
+              <div class="text-center bg-green-300 rounded-md m-4">CEO</div>
+              <div class="self-center">
+                <a href="https://github.com/usman092"
+                  ><svg
+                    width="32px"
+                    height="32px"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+            <!-- Design Advisor -->
+            <div
+              class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg"
+              data-aos="zoom-in-left"
+            >
+              <img
+                src="https://github.com/thenewadeel.png"
+                alt=""
+                class="
+                  w-48
+                  self-center
+                  rounded-full
+                  border-4 border-white
+                  hover:border-green-500 hover:shadow-xl
+                  transition-all
+                "
+              />
+              <div class="text-center rounded-md">Muhammad Adeel Shahid</div>
+              <div class="text-center bg-green-300 rounded-md m-4">
+                Design Advisor
+              </div>
+              <div class="self-center">
+                <a href="https://github.com/thenewadeel"
+                  ><svg
+                    width="32px"
+                    height="32px"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+            <!-- Tech Lead -->
+            <div
+              class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg"
+              data-aos="zoom-in-left"
+            >
+              <img
+                src="img/default-photo.png"
+                alt=""
+                class="
+                  w-48
+                  self-center
+                  rounded-full
+                  border-4 border-white
+                  hover:border-green-500 hover:shadow-xl
+                  transition-all
+                "
+              />
+              <div class="text-center">John Doe</div>
+              <div class="text-center bg-green-300 rounded-md m-4">
+                Tech Lead
+              </div>
+            </div>
+            <!-- HR Manager -->
+            <div
+              class="flex flex-col w-max p-8 hover:shadow-lg m-2 rounded-lg"
+              data-aos="zoom-in-left"
+            >
+              <img
+                src="img/default-photo.png"
+                alt=""
+                class="
+                  w-48
+                  self-center
+                  rounded-full
+                  border-4 border-white
+                  hover:border-green-500 hover:shadow-xl
+                  transition-all
+                "
+              />
+              <div class="text-center">Jane Doe</div>
+              <div class="text-center bg-green-300 rounded-md m-4">
+                HR Manager
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Services Section -->
+    <div
+      id="services"
+      class="
+        h-full
+        p-2
+        md:pt-40
+        bg-rose-100
+        md:p-20
+        shadow-inner
+        bg-gradient-to-b
+        from-sky-50
+        to-rose-200
+      "
+    >
+      <div data-aos="zoom-in-up">
+        <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
+          How our Software Consultants can help you
+        </h2>
+        <p class="text-base md:py-4 p-2 text-justify indent-8">
+          Over the years, we at Wittness have developed a keen eye in identifying
+          software needs that can increase the efficieny of businesses. We have
+          worked on numerous tech stacks in various business domains, resulting in
+          customer satisafaction. Our team can consult with your business for as
+          little or as long as you need and give support as required. Our key
+          services include Design & Deployment on the following :
+         </p>
+        <ul
+          class="flex flex-col text-base leading-5 indent-4"
+          data-aos="zoom-in-left"
+        >
+          <li class="md:py-2">
+            <span class="px-2">O</span> Web infrastructure
+          </li>
+          <li class="md:py-2">
+            <span class="px-2">O</span> Distributed Web based infrastructure
+          </li>
+          <li class="md:py-2"><span class="px-2">O</span> On site solutions</li>
+          <li class="md:py-2"><span class="px-2">O</span> Cloud services</li>
+          <li class="md:py-2">
+            <span class="px-2">O</span> Windows/ Android/ Mac/ iOS and Linux
+            based stand-alone business Applications
+          </li>
+          <li class="md:py-2">
+            <span class="px-2">O</span> Setting up network infrastructure
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Process Section -->
+    <div
+      id="process"
+      class="
+        h-full
+        p-2
+        md:pt-40
+        bg-rose-200
+        md:p-20
+        shadow-inner
+        bg-gradient-to-b
+        from-rose-200
+        to-rose-300
+      "
+    >
+      <div data-aos="zoom-in-up">
+        <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
+          Understanding your business
+        </h2>
+        <p class="text-base md:py-4 p-2 text-justify indent-8">
+          Before we even think about making any recommendations, we spend time
+          talking to management and staff and getting to know your business. We
+          then look at the capabilities of your existing system and analyse your
+          business operations to determine where any efficiencies could be made
+          and what, currently, stands in the way of achieving this.
+        </p>
+        <p class="text-base md:py-4 p-2 text-justify indent-8">
+          By having this bigger picture, we ensure that our recommendations
+          accurately and effectively meet your business needs and the requirements
+          of your particular organisation.
+        </p>
+        <div class="flex flex-col md:flex-row">
+          <div
+            class="
+              md:py-4
+              w-full
+              self-center
+              rounded-xl
+              p-2
+              md:m-2
+              hover:border-green-500 hover:shadow-xl
+              transition-all
+              text-base
+            "
+            data-aos="zoom-in-left"
+          >
+            <h3 class="text-xl md:p-4 text-center font-bold">
+              Business analysis
+            </h3>
+            <ul class="text-base indent-8">
+              <li><span class="px-2 md:px-4">O</span>Requirements analysis</li>
+              <li>
+                <span class="px-2 md:px-4">O</span>Collaborative prototyping
+              </li>
+              <li><span class="px-2 md:px-4">O</span>Application structure</li>
+              <li><span class="px-2 md:px-4">O</span>Technical specification</li>
+            </ul>
+          </div>
+          <div
+            class="
+              md:py-4
+              w-full
+              self-center
+              rounded-xl
+              p-2
+              md:m-2
+              hover:border-green-500 hover:shadow-xl
+              transition-all
+              text-base
+            "
+            data-aos="zoom-in-left"
+          >
+          <h3 class="text-xl md:p-4 text-center font-bold">Systems analysis</h3>
+            <ul class="text-base indent-8">
+              <li><span class="p-2 md:px-4">O</span>Technical solution</li>
+              <li><span class="p-2 md:px-4">O</span>Support plan</li>
+              <li><span class="p-2 md:px-4">O</span>Stakeholders</li>
+            </ul>
+          </div>
+          <div
+            class="
+              md:py-4
+              w-full
+              self-center
+              rounded-xl
+              p-2
+              md:m-2
+              hover:border-green-500 hover:shadow-xl
+              transition-all
+              text-base
+            "
+            data-aos="zoom-in-left"
+          >
+            <h3 class="text-xl md:p-4 text-center font-bold">
+              Operational analysis
+            </h3>
+            <ul class="text-base indent-8">
+              <li><span class="p-2 md:px-4">O</span>Development methodology</li>
+              <li><span class="p-2 md:px-4">O</span>Coding standards</li>
+              <li><span class="p-2 md:px-4">O</span>System management</li>
+              <li><span class="p-2 md:px-4">O</span>Quality assurance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Consultancy Section -->
+    <div
+      id=""
+      class="
+        h-full
+        p-2
+        md:pt-40
+        bg-rose-100
+        md:p-20
+        shadow-inner
+        bg-gradient-to-b
+        from-rose-300
+        to-rose-50
+      "
+    >
+      <div data-aos="zoom-in-up">
+        <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
+          About our System Consultants
+        </h2>
+        <p class="text-base md:py-4 p-2 text-justify indent-8">
+          Our Consultants are highly experienced Technical Architects and Software
+          Developers, meaning they recognise not only what is required from a
+          business perspective, but also what is achievable from a technical
+          standpoint. They have many years of hands-on experience of guiding
+          companies through technology change.
+        </p>
+        <p class="text-base md:py-4 p-2 text-justify indent-8">
+          Advising on the best technology solution for your business, our
+          Consultants are here to offer help and guidance on how to overcome the
+          huge challenges posed by the development of large-scale complex software
+          systems, such as:
+        </p>
+        <ul class="text-base indent-8">
+          <li><span class="p-2 md:px-4">O</span>Avoiding late software</li>
+          <li><span class="p-2 md:px-4">O</span>Delivery going over budget</li>
+          <li>
+            <span class="p-2 md:px-4">O</span>Functionality resolving
+            complexities/ sensitivities with the alignment of company goals
+          </li>
+          <li>
+            <span class="p-2 md:px-4">O</span>Integrating new and existing systems
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Work Examples Section -->
+    <div
+      id="caseStudies"
+      class="
+        h-full
+        p-2
+        md:pt-40
+        bg-gray-300
+        md:p-20
+        shadow-inner
+        bg-gradient-to-b
+        from-gray-300
+        to-lime-300
+      "
+    >
+      <h2 class="text-xl font-bold md:text-3xl p-2 text-center">
+        Examples of Work
+      </h2>
+      <div
+        class="flex flex-col md:flex-row p-2 h-full rounded-xl justify-between"
+      >
+        <div
+          class="
+            mb-2
+            rounded-xl
+            bg-green-50
+            px-4
+            md:m-4 md:w-1/4
+            flex flex-col
+            h-auto
+            justify-between justify-items-stretch
+            text-center
+            h-full
+            border-2 border-green-400
+            hover:shadow-2xl
+            transition-all
+          "
+          data-aos="zoom-in-left"
+        >
+          <div
+            class="
+              bg-green-300
+              border-b-8 border-green-600
+              rounded-b-full
+              flex flex-col
+              pt-12
+            "
+          >
+            <div class="relative -top-6 text-xl font-bold flex-wrap px-4">
+              Digital Fleet Management
+            </div>
+          </div>
+          <div class="p-2 text-base text-justify">
+            Logistics operations are time critical and need a constant lookout
+            to identify bottle necks and possible points of failure. Our
+            solution provides continuous monitoring of all elements involved in
+            tranport and delivery cycles. Fleet management made easy using
+            digital solutions.
+          </div>
+          <button
+            class="
+              bg-green-500
+              hover:bg-green-600 hover:text-white hover:shadow-md
+              transition-all
+              rounded-xl
+              p-2
+              px-4
+              m-4
+            "
+          >
+            Learn More
+          </button>
+        </div>
+
+        <div
+          class="
+            mb-2
+            rounded-xl
+            bg-green-50
+            px-4
+            md:m-4 md:w-1/4
+            flex flex-col
+            h-auto
+            justify-between justify-items-stretch
+            text-center
+            h-full
+            border-2 border-green-400
+            hover:shadow-2xl
+            transition-all
+          "
+          data-aos="zoom-in-left"
+        >
+          <div
+            class="
+              bg-green-300
+              border-b-8 border-green-600
+              rounded-b-full
+              flex flex-col
+              pt-12
+            "
+          >
+            <div class="relative -top-6 text-xl font-bold flex-wrap px-4">
+              Hospital Management Solution
+            </div>
+          </div>
+          <div class="p-2 text-base text-justify">
+            Our system scales from privately owned mini clinics to metropolitan
+            hospitals.
+          </div>
+          <button
+            class="
+              bg-green-500
+              hover:bg-green-600 hover:text-white hover:shadow-md
+              transition-all
+              rounded-xl
+              p-2
+              px-4
+              m-4
+            "
+          >
+            Learn More
+          </button>
+        </div>
+
+        <div
+          class="
+            mb-2
+            rounded-xl
+            bg-green-50
+            px-4
+            md:m-4 md:w-1/4
+            flex flex-col
+            h-auto
+            justify-between justify-items-stretch
+            text-center
+            h-full
+            border-2 border-green-400
+            hover:shadow-2xl
+            transition-all
+          "
+          data-aos="zoom-in-left"
+        >
+          <div
+            class="
+              bg-green-300
+              border-b-8 border-green-600
+              rounded-b-full
+              flex flex-col
+              pt-12
+            "
+          >
+            <div class="relative -top-6 text-xl font-bold flex-wrap px-4">
+              Hotel Management Solution
+            </div>
+          </div>
+          <div class="p-2 text-base text-justify">
+            Our solution can help in managing booking operations of hotels as
+            well as providing additional services to customers.
+          </div>
+          <button
+            class="
+              bg-green-500
+              hover:bg-green-600 hover:text-white hover:shadow-md
+              transition-all
+              rounded-xl
+              p-2
+              px-4
+              m-4
+            "
+          >
+            Learn More
+          </button>
+        </div>
+
+        <div
+          class="
+            mb-2
+            rounded-xl
+            bg-green-50
+            px-4
+            md:m-4 md:w-1/4
+            flex flex-col
+            h-auto
+            justify-between justify-items-stretch
+            text-center
+            h-full
+            border-2 border-green-400
+            hover:shadow-2xl
+            transition-all
+          "
+          data-aos="zoom-in-left"
+        >
+          <div
+            class="
+              bg-green-300
+              border-b-8 border-green-600
+              rounded-b-full
+              flex flex-col
+              pt-12
+            "
+          >
+            <div class="relative -top-6 text-xl font-bold flex-wrap px-4">
+              Open School Initiative
+            </div>
+          </div>
+          <div class="p-2 text-base text-justify">
+            With the advent of distant learning trends it is imperative that an
+            open school architecture with distributed learning resources be made
+            for teachers and students benefits. OSI provides these facilities to
+            institutions and individuals alike to share their knowledge base and
+            helping achieve better education standards.
+          </div>
+          <button
+            class="
+              bg-green-500
+              hover:bg-green-600 hover:text-white hover:shadow-md
+              transition-all
+              rounded-xl
+              p-2
+              px-4
+              m-4
+            "
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Section -->
+    <div
+      id="contact"
+      class="
+        md:pt-36
+        bg-green-400
+        md:p-20
+        flex flex-col
+        md:flex-row
+        h-auto
+        bg-gradient-to-b
+        from-lime-300
+        to-gray-300
+      "
+    >
+      <div
+        class="
+          flex flex-col
+          rounded-2xl
+          w-full
+          h-full
+          hover:shadow-xl hover:border-opacity-0
+          border-red-600 border-4 border-opacity-0
+          transition-all
+          border-4
+        "
+        data-aos="zoom-in-up"
+      >
+        <div class="text-center text-lg md:p-2 font-bold">
+          Are you looking for a bespoke software solution for your business?
+          <!-- <div class="text-center text-base font-normal md:p-2">
+            Our experts can create applications, platforms and products to meet
+            the requirements of your business
+          </div> -->
+        </div>
+        <div class="flex w-full h-full p-2 md:grid grid-cols-2 relative">
+          <!-- <div
+            class="
+              text-ellipsis
+              w-full
+              p-4
+              text-justify text-base text-white
+              absolute
+              border-4 border-black
+              md:relative md:text-black
+              text-center
+              leading-4
+              inset-x-0
+              md:text-2xl
+              flex
+              items-center
+              indent-6
+              md:indent-16
+            "
+          > -->
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            class="
+              z-10
+              flex flex-col
+              w-full
+              rounded-xl
+              text-ellipsis
+              h-auto
+              p-4
+              text-justify text-base text-white
+              relative
+              md:relative md:text-black
+              text-center
+              leading-4
+              inset-x-0
+              md:text-2xl
+              items-center
+              md:indent-16
+              bg-black bg-opacity-50
+              md:bg-opacity-20 md:shadow-inner
+            "
+          >
+            <div class="flex row p-2 justify-start">
+              <label>Name: </label>
+              <input
+                type="text"
+                name="name"
+                class="
+                  mx-4
+                  w-full
+                  rounded-md
+                  focus:border-opacity-80
+                  border-2 border-green-300 border-opacity-0
+                  text-black
+                "
+              />
+            </div>
+            <div class="flex row p-2 justify-start">
+              <label>Email: </label>
+              <input
+                type="email"
+                name="email"
+                class="
+                  mx-4
+                  w-full
+                  rounded-md
+                  focus:border-opacity-80
+                  text-black
+                  border-2 border-green-300 border-opacity-0
+                "
+              />
+            </div>
+            <div class="flex row p-2 justify-start items-center">
+              <label>Your Role: </label>
+              <div class="flex flex-col">
+                <div class="flex row px-4 align-middle items-center">
+                  <input type="checkbox" name="owner" id="" />
+                  Business Owner
+                </div>
+                <div class="flex row px-4 align-middle items-center">
+                  <input type="checkbox" name="manager" id="" />
+                  Manager
+                </div>
+                <div class="flex row px-4 align-middle items-center">
+                  <input type="checkbox" name="techLead" id="" />
+                  Tech Lead
+                </div>
+                <div class="flex row px-4 align-middle items-center">
+                  <input type="checkbox" name="student" id="" />
+                  Student
+                </div>
+              </div>
+            </div>
+            <div class="flex row p-2 justify-start items-center">
+              <label>Message: </label>
+              <textarea
+                name="message"
+                class="
+                  mx-4
+                  w-full
+                  rounded-md
+                  focus:border-opacity-80
+                  text-black
+                  border-2 border-green-300 border-opacity-0
+                "
+              ></textarea>
+            </div>
+            <button
+              class="
+                bg-green-500
+                hover:bg-green-600 hover:text-white hover:shadow-md
+                transition-all
+                rounded-xl
+                p-4
+                px-6
+                m-4
+                text-black text-xl
+                self-stretch
+              "
+            >
+              Submit
+            </button>
+          </form>
+          <!-- </div> -->
+
+          <img
+            src="img/contact.jpg"
+            alt=""
+            class="
+              rounded-xl
+              hover:shadow-xl
+              transition-all
+              h-full
+              inset-0
+              absolute
+              p-2
+              md:relative
+              object-cover
+              z-0
+            "
+          />
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div
+        class="
+          md:px-20 md:py-8
+          flex flex-col
+          justify-between
+          bg-zinc-900
+          shadow-lg
+          text-white
+          bg-gradient-to-b
+          from-gray-900
+          via-green-900
+          to-black
+        "
+      >
+        <div
+          class="
+            flex flex-col
+            md:flex-row
+            self-center
+            md:justify-between
+            items-center
+            self-stretch
+          "
+        >
+          Tel : (+92) 333 xxxx xxx <br />
+          Wittness House,<br />
+          Lahore
+          <div class="flex flex-col">
+            <span>Keep in touch</span>
+            <ul class="flex row justify-around">
+              <li>
+                <a href="https://twitter.com/wittnesstech">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="gray"
+                  >
+                    <path
+                      d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                    /></svg
+                ></a>
+              </li>
+              <li>
+                <a href="">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="gray"
+                  >
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="gray"
+                  >
+                    <path
+                      d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="self-center">© Copyright 2022. Wittness Tech</div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    AOS.init();
+  </script>
+</html>
