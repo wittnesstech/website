@@ -4,7 +4,7 @@
 
 ## About Us
 
-At **Wittness Tech**, we build **tailor-made software solutions** for SMEs. Our website ([www.wittness.tech](https://www.wittness.tech)) is a lightweight, performant showcase built with **vanilla HTML, CSS, and JavaScript**.
+At **Wittness Tech**, we build **tailor-made software solutions** for SMEs. Our website ([wittness.tech](https://wittness.netlify.app/)) is a lightweight, performant showcase built with **vanilla HTML, CSS, and JavaScript**.
 
 ## Features
 
@@ -68,7 +68,7 @@ wittness.tech/
 
 ## Business Details
 
-🕴️ [Business Website](https://www.wittness.tech)
+🕴️ [wittness.tech](https://wittness.netlify.app/)
 
 ✍️ hello@wittness.tech
 
