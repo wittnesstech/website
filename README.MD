@@ -4,78 +4,79 @@
 
 ## About Us
 
-At **Wittness Tech**, we build **tailor-made software solutions** for SMEs. Our website ([wittness.tech](https://wittness.netlify.app/)) is a lightweight, performant showcase built with **vanilla HTML, CSS, and JavaScript**.
+At **Wittness Tech**, we build **tailor-made software solutions** for SMEs. Our website ([wittness.tech](https://wittness.netlify.app/)) is a lightweight, performant showcase built with **Vite + Tailwind CSS + Alpine.js**.
 
 ## Features
 
-✔ **Custom Web Apps**  
-✔ **Process Automation**  
-✔ **E-Commerce Solutions**  
-✔ **Data Analytics**
+- ✔ **Custom Web Apps**
+- ✔ **Process Automation**
+- ✔ **E-Commerce Solutions**
+- ✔ **Data Analytics**
 
-## Developer Setup
+## Tech Stack
 
-### 🛠️ Tech Stack
+- **Build**: Vite
+- **Styling**: Tailwind CSS v4
+- **Interactivity**: Alpine.js
+- **Deployment**: Static files (dist folder)
 
-- **Frontend**: Vanilla JS, HTML5, CSS3
-- **Build Tools**: None (pure static files)
-- **Hosting**: cPanel/Netlify/Vercel (static hosting)
-
-### 📥 Installation
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-repo/wittness.tech.git
-   ```
-2. Open in your preferred editor (VS Code recommended).
-
-### 🕷️ Local Development
-
-Run a live server (no build step needed):
+## Quick Start
 
 ```bash
-# Using Python (built-in server)
-python3 -m http.server 8000
+# Install dependencies
+npm install
+
+# Development (hot reload)
+npm run dev
+
+# Production build
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-Then open:
-👉 http://localhost:8000
-
-## 🪶 Project Structure
+## Project Structure
 
 ```
-wittness.tech/
-├── index.html          # Homepage
-├── contact.html        # Contact form
-├── assets/
-│   ├── css/           # Global styles
-│   ├── js/            # Vanilla JS scripts
-│   └── images/        # Optimized assets
-└── README.md          # You’re here!
+wittness/
+├── src/
+│   ├── index.html       # Main HTML
+│   ├── main.js          # Alpine.js entry
+│   ├── style.css        # Tailwind + custom styles
+│   ├── js/              # Local JS libs
+│   ├── css/             # AOS animations
+│   ├── fonts/           # Custom fonts
+│   └── img/             # Images
+├── public/              # Static assets (fonts, extra images)
+├── dist/                # Production build (deploy this)
+├── vite.config.js       # Vite configuration
+└── package.json
 ```
 
-### 🛠️ Contributing
+## Deployment
 
-    Create a branch:
+Build the project and upload the `dist/` folder to any static host:
 
-    ```bash
-    git checkout -b feature/your-feature
-    ```
+```bash
+npm run build
+# Deploy dist/ folder
+```
 
-    Test changes locally.
+### Netlify/Vercel
+- Connect your repo
+- Build command: `npm run build`
+- Output directory: `dist`
 
-    Submit a Pull Request with a clear description.
+### Traditional (cPanel, Apache, Nginx)
+- Upload `dist/` contents to `public_html`
 
-## Business Details
+---
 
 🕴️ [wittness.tech](https://wittness.netlify.app/)
 
 ✍️ hello@wittness.tech
 
-<!-- 📞 +1 (123) 456-78910 -->
-
 ---
 
-```License
 © 2024-25 Wittness Tech. All rights reserved.
-```
